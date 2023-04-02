@@ -6,5 +6,35 @@
         xmlns:local="clr-namespace:BansosKu"
         mc:Ignorable="d"
         Title="MainWindow" Height="620" Width="350">
-    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+        <Path Stroke="#000" Data="m-2.00501,-0.66833l353,0l0,133.61163c-24.20823,-29.51615 -335.83416,-29.11913 -353,-1.0768l0,-132.53483z" Fill="#645caa"/>
+        <Image Source="/Resources/Images/logo.png"/>
+        <Grid Grid.Row="1" Margin="20,20,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image Source="/Resources/Images/image-login.png" Width="200" />
+            <Label Content="NIK" Grid.Row="1"/>
+            <TextBox Height="30" x:Name="tbNik" Grid.Row="2"/>
+            <Label Content="Password" Grid.Row="3"/>
+            <PasswordBox Height="30" x:Name="tbPassword"  Grid.Row="4" Margin="0,10,0,20" />
+            <Button Grid.Row="5" Content="Login" Height="30" Foreground="White" Background="#645caa"/>
+        </Grid>
+
+        <Label Content="DESTROYER" HorizontalAlignment="Center" Foreground="#645caa" FontWeight="Bold" Grid.Row="3"   Margin="0,7,0,0"/>
+    </Grid>
 </Window>

@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-D:\asp-project\BansosKu\BansosKu\obj\Debug\net6.0-windows\
+D:\asp-project\BansosKu\BansosKu\obj\Release\net6.0-windows\
 BansosKu
 none
 false
-TRACE;DEBUG;NET;NET6_0;NETCOREAPP
+TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 D:\asp-project\BansosKu\BansosKu\App.xaml
 11407045341
 
-51176038367
+5-1491975477
 194-1617825143
 MainWindow.xaml;
 
