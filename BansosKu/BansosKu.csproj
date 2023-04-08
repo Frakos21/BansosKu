@@ -8,13 +8,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="image\image-login.png" />
-    <None Remove="image\logo.png" />
+    <None Remove="Image\image-login.png" />
+    <None Remove="Image\image-register.png" />
+    <None Remove="Image\logo.png" />
+    <None Remove="Register\Image\logo.png" />
   </ItemGroup>
 
   <ItemGroup>
-    <Resource Include="image\image-login.png" />
-    <Resource Include="image\logo.png" />
+    <Resource Include="Image\image-login.png" />
+    <Resource Include="Image\image-register.png" />
+    <Resource Include="Image\logo.png" />
+    <Resource Include="Register\Image\logo.png" />
   </ItemGroup>
 
 </Project>
