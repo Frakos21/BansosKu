@@ -23,6 +23,17 @@ namespace BansosKu
         public MainWindow()
         {
             InitializeComponent();
+
+            //BitmapImage image = new BitmapImage();
+
+            // Set URI sumber gambar
+            /*
+            image.BeginInit();
+            image.UriSource = new Uri("/resources/images/logo.png", UriKind.RelativeOrAbsolute);
+            image.EndInit();
+
+            myLogo.Source = image;
+            */
         }
     }
 }
