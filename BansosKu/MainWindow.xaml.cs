@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BansosKu.Model;
+using BansosKu.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +22,22 @@ namespace BansosKu
     /// </summary>
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        private readonly IMasyarakatRepository masyarakatRepository;
+
+        public MainWindow(IMasyarakatRepository masyarakatRepository)
         {
             InitializeComponent();
+            this.masyarakatRepository = masyarakatRepository;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+
         }
     }
+
 }
