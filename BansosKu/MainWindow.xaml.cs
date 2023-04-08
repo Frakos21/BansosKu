@@ -27,6 +27,7 @@ namespace BansosKu
         public MainWindow(IMasyarakatRepository masyarakatRepository)
         {
             InitializeComponent();
+<<<<<<< HEAD
             this.masyarakatRepository = masyarakatRepository;
         }
 
@@ -37,6 +38,19 @@ namespace BansosKu
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
 
+=======
+
+            //BitmapImage image = new BitmapImage();
+
+            // Set URI sumber gambar
+            /*
+            image.BeginInit();
+            image.UriSource = new Uri("/resources/images/logo.png", UriKind.RelativeOrAbsolute);
+            image.EndInit();
+
+            myLogo.Source = image;
+            */
+>>>>>>> dede
         }
     }
 
