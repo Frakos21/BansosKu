@@ -1,4 +1,5 @@
 ﻿using BansosKu.Model;
+using BansosKu.Page.Register;
 using BansosKu.Repository;
 using System;
 using System.Collections.Generic;
@@ -27,30 +28,14 @@ namespace BansosKu
         public MainWindow(IMasyarakatRepository masyarakatRepository)
         {
             InitializeComponent();
-<<<<<<< HEAD
             this.masyarakatRepository = masyarakatRepository;
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-        }
-
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-
-=======
-
-            //BitmapImage image = new BitmapImage();
-
-            // Set URI sumber gambar
-            /*
-            image.BeginInit();
-            image.UriSource = new Uri("/resources/images/logo.png", UriKind.RelativeOrAbsolute);
-            image.EndInit();
-
-            myLogo.Source = image;
-            */
->>>>>>> dede
+            Register register = new Register();
+            this.Close();
+            register.Show();
         }
     }
 

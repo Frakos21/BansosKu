@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace BansosKu.Register
+namespace BansosKu.Page.Register
 {
     /// <summary>
     /// Interaction logic for Register.xaml

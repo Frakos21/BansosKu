@@ -1,9 +1,9 @@
-﻿<Window x:Class="BansosKu.Register.Register"
+﻿<Window x:Class="BansosKu.Page.Register.Register"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:BansosKu.Register"
+        xmlns:local="clr-namespace:BansosKu.Page.Register"
         mc:Ignorable="d"
         Title="Register" Height="620" Width="350">
     <Grid>
@@ -18,7 +18,7 @@
         <Grid>
             <Rectangle Width="350" Height="620" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,115,0,0" Fill="#FFFFFF" RadiusX="30" RadiusY="30"/>
         </Grid>
-        <Image Source="Image\logo.png"/>
+        <Image Source="..\..\Resources\Images\logo.png"/>
         <Grid Grid.Row="1" Margin="20,20,20,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
@@ -55,7 +55,7 @@
                         <ColumnDefinition Width="5*"/>
                         <ColumnDefinition Width="5*"/>
                     </Grid.ColumnDefinitions>
-                    <Image Source="/Image/image-register.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
+                    <Image Source="..\..\Resources\Images\image-register.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
                     <Label Content="Buah Akun" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto" FontWeight="Bold" FontSize="15px"/>
                     <Label Content="NIK" Grid.Row="2"/>
                     <TextBox Height="30" x:Name="tbNik" Grid.Row="3" Grid.ColumnSpan="2"/>
@@ -67,7 +67,7 @@
                     <TextBox Height="30" x:Name="tbrw" Grid.Column="2" Grid.Row="7"/>
                     <Label Content="Password" Grid.Row="8" Grid.ColumnSpan="2"/>
                     <PasswordBox Height="30" x:Name="tbPassword"  Grid.Row="10" Margin="0,10,0,20" Grid.ColumnSpan="2"/>
-                    <Button Grid.Row="11" Content="Register" Height="30" Foreground="White" Background="#645caa" Grid.ColumnSpan="2"/>
+                    <Button x:Name="btnRegister" Grid.Row="11" Content="Register" Height="30" Foreground="White" Background="#645caa" Grid.ColumnSpan="2"/>
               </Grid>
             </ScrollViewer>
         </Grid>

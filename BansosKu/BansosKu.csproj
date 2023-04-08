@@ -8,9 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-<<<<<<< HEAD
-    <None Remove="Resources\Images\image-login.png" />
-    <None Remove="Resources\Images\logo.png" />
+    <None Remove="Resources\Images\image-register.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,20 +18,8 @@
 
   <ItemGroup>
     <Resource Include="Resources\Images\image-login.png" />
+    <Resource Include="Resources\Images\image-register.png" />
     <Resource Include="Resources\Images\logo.png" />
-=======
-    <None Remove="Image\image-login.png" />
-    <None Remove="Image\image-register.png" />
-    <None Remove="Image\logo.png" />
-    <None Remove="Register\Image\logo.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Image\image-login.png" />
-    <Resource Include="Image\image-register.png" />
-    <Resource Include="Image\logo.png" />
-    <Resource Include="Register\Image\logo.png" />
->>>>>>> dede
   </ItemGroup>
 
 </Project>

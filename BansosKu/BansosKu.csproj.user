@@ -7,7 +7,7 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Register\Register.xaml.cs">
+    <Compile Update="Page\Register\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,7 +15,7 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Register\Register.xaml">
+    <Page Update="Page\Register\Register.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
