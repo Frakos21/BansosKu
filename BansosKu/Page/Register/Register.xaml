@@ -58,7 +58,7 @@
                     <Image Source="..\..\Resources\Images\image-register.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
                     <Label Content="Buah Akun" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto" FontWeight="Bold" FontSize="15px"/>
                     <Label Content="NIK" Grid.Row="2"/>
-                    <TextBox Height="30" x:Name="tbNik" Grid.Row="3" Grid.ColumnSpan="2"/>
+                    <TextBox Height="30" x:Name="tbNik" Grid.Row="3" Grid.ColumnSpan="2" TextChanged="tbNik_TextChanged"/>
                     <Label Content="Nama" Grid.Row="4"/>
                     <TextBox Height="30" x:Name="tbNama" Grid.ColumnSpan="2" Grid.Row="5"/>
                     <Label Content="RT" Grid.Row="6" Grid.ColumnSpan="1"/>

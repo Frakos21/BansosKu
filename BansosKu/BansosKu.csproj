@@ -8,7 +8,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Images\Avatar.png" />
+    <None Remove="Resources\Images\c.png" />
+    <None Remove="Resources\Images\cari.png" />
+    <None Remove="Resources\Images\chevron-right.png" />
+    <None Remove="Resources\Images\ellypsis.png" />
     <None Remove="Resources\Images\image-register.png" />
+    <None Remove="Resources\Images\Sidebar.png" />
+    <None Remove="Resources\Images\Vector.png" />
+    <None Remove="Roboto-Bold.ttf" />
+    <None Remove="Roboto-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,9 +26,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\Images\Avatar.png" />
+    <Resource Include="Resources\Images\c.png" />
+    <Resource Include="Resources\Images\cari.png" />
+    <Resource Include="Resources\Images\chevron-right.png" />
+    <Resource Include="Resources\Images\ellypsis.png" />
     <Resource Include="Resources\Images\image-login.png" />
     <Resource Include="Resources\Images\image-register.png" />
     <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\Sidebar.png" />
+    <Resource Include="Resources\Images\Vector.png" />
+    <Resource Include="Resources\Font\Roboto-Bold.ttf" />
+    <Resource Include="Resources\Font\Roboto-Regular.ttf" />
   </ItemGroup>
 
 </Project>
