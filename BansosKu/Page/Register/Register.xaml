@@ -6,20 +6,73 @@
         xmlns:local="clr-namespace:BansosKu.Page.Register"
         mc:Ignorable="d"
         Title="Register" Height="620" Width="350">
-    <Grid>
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="10" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="#645CAA">
         <Grid.RowDefinitions>
-            <RowDefinition Height="130"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
-        <Grid Background="#645CAA">
+        <Rectangle Fill="#645CAA" Grid.Row="0" />
 
-        </Grid>
-        <Grid>
-            <Rectangle Width="350" Height="620" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,115,0,0" Fill="#FFFFFF" RadiusX="30" RadiusY="30"/>
-        </Grid>
-        <Image Source="..\..\Resources\Images\logo.png"/>
-        <Grid Grid.Row="1" Margin="20,20,20,0">
+        <Image Source="\Resources\Images\logo.png" Width="200" Grid.Row="0"/>
+        <Rectangle Grid.Row="1" Width="350" Height="620" HorizontalAlignment="Left" VerticalAlignment="Top" Fill="#FFFFFF" RadiusX="30" RadiusY="30"/>
+        <Grid Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
@@ -31,46 +84,68 @@
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
                 <RowDefinition Height="auto"/>
-                <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
+            <Image Grid.Row="0" Source="\Resources\Images\image-register.png" Width="200"/>
+            <Label Content="Buat Akun" Grid.Row="1" HorizontalAlignment="Center" FontWeight="Bold" Foreground="#303030" FontSize="15"/>
+            <Label Content="Masukan NIK, Nama,dan Password Anda" Grid.Row="2" HorizontalAlignment="Center" FontWeight="SemiBold" Foreground="#999999" FontSize="10"/>
+            <Grid Grid.Row="3" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="\Resources\Images\user2.png" Margin="20,0,0,0" Width="15" HorizontalAlignment="Center"/>
+                <TextBox x:Name="TBNIK" Grid.Column="1" Text="Masukan NIK Anda" BorderThickness="0" FontSize="10" Foreground="#999999"/>
+            </Grid>
+            <Line X1="0" Y1="50" X2="250" Margin="40,12,0,20" HorizontalAlignment="Left" Y2="50" Stroke="#30303030" StrokeThickness="2" Grid.RowSpan="3" Grid.Row="2"/>
+            <Line X1="0" Y1="50" X2="250" Margin="40,25,0,17" HorizontalAlignment="Left" Y2="50" Stroke="#30303030" StrokeThickness="2" Grid.RowSpan="3" Grid.Row="3"/>
+            <Line X1="0" Y1="50" X2="250" Margin="40,23,0,16" HorizontalAlignment="Left" Y2="50" Stroke="#30303030" StrokeThickness="2" Grid.RowSpan="3" Grid.Row="4"/>
+            <Grid Grid.Row="4" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
 
-            <ScrollViewer Grid.Row="0" Grid.RowSpan="12" Grid.Column="0" Grid.ColumnSpan="2" 
-                 VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="115"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="30"/>
-                        <RowDefinition Height="60"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="5*"/>
-                        <ColumnDefinition Width="5*"/>
-                    </Grid.ColumnDefinitions>
-                    <Image Source="..\..\Resources\Images\image-register.png" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2"/>
-                    <Label Content="Buah Akun" Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Roboto" FontWeight="Bold" FontSize="15px"/>
-                    <Label Content="NIK" Grid.Row="2"/>
-                    <TextBox Height="30" x:Name="tbNik" Grid.Row="3" Grid.ColumnSpan="2" TextChanged="tbNik_TextChanged"/>
-                    <Label Content="Nama" Grid.Row="4"/>
-                    <TextBox Height="30" x:Name="tbNama" Grid.ColumnSpan="2" Grid.Row="5"/>
-                    <Label Content="RT" Grid.Row="6" Grid.ColumnSpan="1"/>
-                    <Label Content="RW" Grid.Row="6" Grid.ColumnSpan="1" Grid.Column="2"/>
-                    <TextBox Height="30" x:Name="tbrt" Grid.ColumnSpan="1" Grid.Row="7"/>
-                    <TextBox Height="30" x:Name="tbrw" Grid.Column="2" Grid.Row="7"/>
-                    <Label Content="Password" Grid.Row="8" Grid.ColumnSpan="2"/>
-                    <PasswordBox Height="30" x:Name="tbPassword"  Grid.Row="10" Margin="0,10,0,20" Grid.ColumnSpan="2"/>
-                    <Button x:Name="btnRegister" Grid.Row="11" Content="Register" Height="30" Foreground="White" Background="#645caa" Grid.ColumnSpan="2"/>
-              </Grid>
-            </ScrollViewer>
+                <Image Source="\Resources\Images\user2.png" Margin="20,0,0,0" Width="15" HorizontalAlignment="Center"/>
+                <TextBox x:Name="TBNama" Grid.Column="1" Text="Masukan Nama Anda" BorderThickness="0" FontSize="10" Foreground="#999999"/>
+            </Grid>
+            <Grid Grid.Row="5" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="\Resources\Images\padlock 1.png" Margin="20,0,0,0" Width="15" HorizontalAlignment="Center"/>
+                <TextBox x:Name="TBPassword" Grid.Column="1" Text="Masukkan password Anda (6+ characters)" BorderThickness="0" FontSize="10" Foreground="#999999"/>
+            </Grid>
+            <Grid Grid.Row="6" Margin="0,20,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="75"/>
+                    <ColumnDefinition Width="210"/>
+                    <ColumnDefinition Width="75"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="\Resources\Images\padlock 1.png" Margin="20,0,0,0" Width="15" HorizontalAlignment="Center"/>
+                <TextBox x:Name="TBComfirm" Grid.Column="1" Text="Komfirmasi password Anda" BorderThickness="0" FontSize="10" Foreground="#999999"/>
+            </Grid>
+            <Grid Grid.Row="7" Margin="0,25,0,0">
+                <Button Click="btnLogin_Click" x:Name="btnRegister" Content="Register" Height="30" Foreground="White" Background="#645caa" Width="275"/>
+            </Grid>
+            <Grid Grid.Row="8" Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="175"/>
+                    <ColumnDefinition Width="175"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Sudah Punya Akun?" FontWeight="Medium" Grid.Column="0" FontSize="11" Foreground="#303030" Grid.ColumnSpan="2" Margin="96,0,79,0"/>
+                <Button x:Name="btnLogin" Content="Login" Foreground="#645caa" Background="Transparent" BorderThickness="0" 
+                        Click="btnLogin_Click" FontWeight="SemiBold" Grid.ColumnSpan="2" Margin="132,0,43,0"/>
+            </Grid>
+            <Grid Grid.Row="9" Margin="0,0,0,0">
+                <Label Content="DESTROYER" HorizontalAlignment="Center" FontSize="20" Foreground="#645caa" FontWeight="Bold"/>
+            </Grid>
+            <Line X1="0" Y1="50" X2="250" Margin="40,21,0,37" HorizontalAlignment="Left" Y2="50" Stroke="#30303030" StrokeThickness="2" Grid.RowSpan="3" Grid.Row="5"/>
         </Grid>
-        <Label Content="DESTROYER" HorizontalAlignment="Center" Foreground="#645caa" FontWeight="Bold" Grid.Row="3"   Margin="0,7,0,0"/>
     </Grid>
 </Window>

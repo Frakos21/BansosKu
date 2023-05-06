@@ -14,7 +14,9 @@
     <None Remove="Resources\Images\chevron-right.png" />
     <None Remove="Resources\Images\ellypsis.png" />
     <None Remove="Resources\Images\image-register.png" />
+    <None Remove="Resources\Images\padlock 1.png" />
     <None Remove="Resources\Images\Sidebar.png" />
+    <None Remove="Resources\Images\user2.png" />
     <None Remove="Resources\Images\Vector.png" />
     <None Remove="Roboto-Bold.ttf" />
     <None Remove="Roboto-Regular.ttf" />
@@ -34,7 +36,9 @@
     <Resource Include="Resources\Images\image-login.png" />
     <Resource Include="Resources\Images\image-register.png" />
     <Resource Include="Resources\Images\logo.png" />
+    <Resource Include="Resources\Images\padlock 1.png" />
     <Resource Include="Resources\Images\Sidebar.png" />
+    <Resource Include="Resources\Images\user2.png" />
     <Resource Include="Resources\Images\Vector.png" />
     <Resource Include="Resources\Font\Roboto-Bold.ttf" />
     <Resource Include="Resources\Font\Roboto-Regular.ttf" />
