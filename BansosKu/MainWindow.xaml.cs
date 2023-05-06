@@ -1,6 +1,5 @@
 ﻿using BansosKu.Model;
 using BansosKu.Page.Register;
-using BansosKu.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,12 +22,13 @@ namespace BansosKu
     /// </summary>
     public partial class MainWindow : Window
     {
-        private readonly IMasyarakatRepository masyarakatRepository;
-
-        public MainWindow(IMasyarakatRepository masyarakatRepository)
+     
+        public MainWindow()
         {
             InitializeComponent();
-            this.masyarakatRepository = masyarakatRepository;
+            Masyarakat m = new Masyarakat();
+            m.Id = 1;
+            m.Fullname = "Tangguh";
         }
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
@@ -36,6 +36,10 @@ namespace BansosKu
             Register register = new Register();
             this.Close();
             register.Show();
+        }
+
+        private void btnLogin_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 

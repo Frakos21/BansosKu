@@ -32,7 +32,7 @@
             <TextBox Height="30" x:Name="tbNik" Grid.Row="2"/>
             <Label Content="Password" Grid.Row="3"/>
             <PasswordBox Height="30" x:Name="tbPassword"  Grid.Row="4" Margin="0,10,0,20" />
-            <Button x:Name="btnLogin" Grid.Row="5" Content="Login" Height="30" Foreground="White" Background="#645caa"/>
+            <Button x:Name="btnLogin" Click="btnLogin_Click" Grid.Row="5" Content="Login" Height="30" Foreground="White" Background="#645caa"/>
             <Button x:Name="btnRegister" Click="btnRegister_Click" BorderThickness="0" Background="Transparent" Content="Register" Grid.Row="6" HorizontalAlignment="Center" />
         </Grid>
 
