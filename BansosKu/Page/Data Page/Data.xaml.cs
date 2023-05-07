@@ -23,5 +23,15 @@ namespace BansosKu.Page.Data_Page
         {
             InitializeComponent();
         }
+
+        private void BtnKirim_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void tbNama_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
 }

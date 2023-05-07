@@ -1,4 +1,5 @@
 ﻿using BansosKu.Model;
+using BansosKu.Page.Home;
 using BansosKu.Page.Register;
 using System;
 using System.Collections.Generic;
@@ -40,6 +41,9 @@ namespace BansosKu
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            Home home = new Home();
+            this.Close();
+            home.Show();
         }
     }
 
