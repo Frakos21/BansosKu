@@ -23,5 +23,10 @@ namespace BansosKu.Page.Home
         {
             InitializeComponent();
         }
+
+        //private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
+        //{
+        //    Sidebar side = new Sidebar();
+        //}
     }
 }

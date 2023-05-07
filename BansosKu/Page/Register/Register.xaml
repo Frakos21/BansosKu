@@ -25,7 +25,7 @@
         <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
         <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
         <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+        <Style x:Key="ButtonRoundedStyle" TargetType="{x:Type Button}">
             <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
             <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
             <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
@@ -131,7 +131,7 @@
                 <TextBox x:Name="TBComfirm" Grid.Column="1" Text="Komfirmasi password Anda" BorderThickness="0" FontSize="10" Foreground="#999999"/>
             </Grid>
             <Grid Grid.Row="7" Margin="0,25,0,0">
-                <Button Click="btnLogin_Click" x:Name="btnRegister" Content="Register" Height="30" Foreground="White" Background="#645caa" Width="275"/>
+                <Button Click="btnRegister_Click" x:Name="btnRegister" Content="Register" Height="30" Foreground="White" Background="#645caa" Width="275"/>
             </Grid>
             <Grid Grid.Row="8" Margin="0,0,0,0">
                 <Grid.ColumnDefinitions>

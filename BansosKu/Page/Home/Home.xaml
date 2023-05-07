@@ -6,21 +6,168 @@
         xmlns:local="clr-namespace:BansosKu.Page.Home"
         mc:Ignorable="d"
         Title="Home" Height="620" Width="350">
-    <Grid>
-        <Rectangle HorizontalAlignment="Center" Height="35" Margin="0,68,0,0" VerticalAlignment="Top" 
-                   Width="311" Fill="WhiteSmoke" RadiusX="13" RadiusY="13" Stroke="#E3E3E3"/>
-        <Label Content="Cari Info Bansos" HorizontalAlignment="Left" Margin="68,74,0,0" VerticalAlignment="Top"
-               Foreground="#645CAA" Style="{StaticResource CustomFont}" FontWeight="Bold"/>
-        <Image Margin="41,79,295,511" Source="/Resources/Images/cari.png" Stretch="Fill" RenderTransformOrigin="0.31,0.145"/>
-        <Image Margin="293,10,10,547" Source="/Resources/Images/Avatar.png" Stretch="Fill"/>
-        <Image Margin="20,16,292,552" Source="/Resources/Images/Sidebar.png" Stretch="Fill"/>
-        <Rectangle HorizontalAlignment="Center" Height="119" Margin="0,129,0,0" VerticalAlignment="Top" 
-                   Width="325" Fill="#645CAA" RadiusX="13" RadiusY="13" Stroke="#E3E3E3"
-                   Opacity="0.75"/>
-        <Label Content="Bansos Terdekat" HorizontalAlignment="Left" Margin="37,148,0,0" VerticalAlignment="Top"
-            Foreground="White" Style="{StaticResource CustomFont}" FontWeight="Bold" FontSize="16px"/>
-        <Label Content="Info bansos terdekat antar bulan November - Desember" 
-               HorizontalAlignment="Left" Margin="39,182,0,0" VerticalAlignment="Top"
-            Foreground="White" Style="{StaticResource CustomFont}" FontWeight="Regular" FontSize="9px"/>
+    <Window.Resources>
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="/Resources/Images/Sidebar.png"/>
+        <Style x:Key="font_style" TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="/../../Resources/Font/Roboto-Bold.ttf #Roboto"/>
+            <Setter Property="VerticalAlignment"
+                    Value="center"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="Foreground"
+                    Value="Black"/>
+            <Setter Property="FontSize"
+                    Value="20"/>
+        </Style>
+
+        <Style TargetType="ToolTip" x:Key="tt_style">
+            <Setter Property="Placement" Value="Right"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="/../../Resources/Font/Roboto-Bold.ttf"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="PlacementRectangle" Value="60,0,0,0"/>
+            <Setter Property="HorizontalOffset" Value="15"/>
+            <Setter Property="VerticalOffset" Value="6"/>
+            <Setter Property="HasDropShadow" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            
+        </Style>
+        
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                            </Trigger>
+                            
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="White">
+        <Grid x:Name="nav_pnl"
+              HorizontalAlignment="Left"
+              Width="55"
+              Background="#645caa">
+            <StackPanel x:Name="st_pnl">
+                <Grid Height="60">
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Margin ="73,-20,0,0"
+                               Text="M E N U"
+                               Foreground="Black"
+                               FontSize="22"
+                               Background="Transparent"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource font_style}">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="10"
+                                              ShadowDepth="1"
+                                              Direction="-90"
+                                              Color="#645CAA"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <ToggleButton x:Name="button_side"
+                                  Grid.Column="0"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Left"
+                                  Margin="12,-20,0,0"
+                                  Height="30"
+                                  Width="30"
+                                  BorderThickness="0"
+                                  Style="{StaticResource tb_style}">
+                        <ToggleButton.Background>
+                            <ImageBrush ImageSource="/Resources/Images/Sidebar.png" Stretch="Fill"/>
+                        </ToggleButton.Background>
+                        <ToggleButton.Triggers>
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="HideStackPanel">
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="nav_pnl"
+                                            Storyboard.TargetProperty="Width"
+                                            BeginTime="0:0:0"
+                                            From="230" To="65"
+                                            Duration = "0:0:0:2">
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="ShowStackPanel">
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="nav_pnl"
+                                            Storyboard.TargetProperty="Width"
+                                            BeginTime="0:0:0"
+                                            From="65" To="230"
+                                            Duration="0:0:0:3">
+                                            
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+
+                    </ToggleButton>
+                </Grid>
+                <ListViewItem x:Name="LV"
+                              Background="Transparent"
+                              BorderBrush="Transparent"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="\..\..\Resources\Images\Home.png"
+                                   Margin="12,0,0,0" Stretch="None"/>
+                            <TextBlock Text="Home"
+                                       Margin="25,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_home"
+                                     Content="Home"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+                        
+                    </ListViewItem>
+                    
+                </ListViewItem>
+            </StackPanel>
+
+        </Grid>
     </Grid>
 </Window>
