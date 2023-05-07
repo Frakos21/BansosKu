@@ -6,88 +6,60 @@
         xmlns:local="clr-namespace:BansosKu.Page.Pengaturan"
         mc:Ignorable="d"
         Title="Pengaturan" Height="620" Width="350">
-    <Window.Resources>
-        <Style x:Key="FocusVisual">
-            <Setter Property="Control.Template">
-                <Setter.Value>
-                    <ControlTemplate>
-                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
-        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
-        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
-        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
-        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
-        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
-        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
-        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
-        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
-            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
-            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
-            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
-            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
-            <Setter Property="BorderThickness" Value="0"/>
-            <Setter Property="HorizontalContentAlignment" Value="Center"/>
-            <Setter Property="VerticalContentAlignment" Value="Center"/>
-            <Setter Property="Padding" Value="1"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border x:Name="border" CornerRadius="13" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
-                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
-                        </Border>
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsDefaulted" Value="true">
-                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                            </Trigger>
-                            <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsPressed" Value="true">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
-                            </Trigger>
-                            <Trigger Property="IsEnabled" Value="false">
-                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
-                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
-                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>
-    <Grid>
-        <Grid Background="#645CAA">
-            <Label Content="Pengaturan" HorizontalAlignment="Left" Margin="68,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.346,-0.499"
-                   Style="{StaticResource CustomFont}" FontSize="18px" FontWeight="Bold" 
-                   Foreground="#ffffff"/>
-            <Image Margin="31,32,301,554" Source="/Resources/Images/Vector.png" Stretch="Fill"/>
-        </Grid>
-        <Grid>
-            <Rectangle Width="350" Height="620" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,115,0,0" Fill="#FFFFFF" RadiusX="30" RadiusY="30"/>
-            <Rectangle HorizontalAlignment="Center" Height="35" Margin="0,68,0,0" VerticalAlignment="Top" Width="311" Fill="WhiteSmoke" RadiusX="13" RadiusY="13"/>
-            <Image Margin="35,79,301,511" Source="/Resources/Images/cari.png" Stretch="Fill"/>
-            <Image Margin="35,143,251,397" Source="/Resources/Images/Avatar.png" Stretch="Fill"/>
-            <Label Content="Cari Info Bansos" HorizontalAlignment="Left" Margin="68,74,0,0" VerticalAlignment="Top"
+    <Grid Background="#645CAA">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="109*"/>
+            <RowDefinition Height="495*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,30,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5*"/>
+                <RowDefinition Height="5*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Pengaturan" VerticalAlignment="Top" Style="{StaticResource CustomFont}" FontSize="18px" FontWeight="Bold" 
+                   Foreground="#ffffff" Grid.Row="0" Margin="60,0,0,0"/>
+            <Image Margin="30,0,0,10" Source="/Resources/Images/Vector.png" Grid.Row="0" Width="18" HorizontalAlignment="Left"/>
+            <Rectangle HorizontalAlignment="Center" Height="35" 
+                       VerticalAlignment="Top" Width="311" Fill="WhiteSmoke" 
+                       RadiusX="13" RadiusY="13" Grid.Row="1"/>
+            <Image Margin="30,12,0,15" Source="/Resources/Images/cari.png" 
+                   Stretch="Fill" Grid.Row="1" Width="10" HorizontalAlignment="Left"/>
+            <Label Content="Cari Info Bansos" HorizontalAlignment="Left" Grid.Row="1" Margin="60,6,0,0"
                Foreground="#645CAA" Style="{StaticResource CustomFont}" FontWeight="Bold"/>
-            <Label Content="2023 DESTROYER" HorizontalAlignment="Center" Margin="0,576,0,0" 
-                   VerticalAlignment="Top" FontSize="9" Foreground="#9D9D9D"/>
-            <Label Content="Ngatemin" HorizontalAlignment="Left" Margin="158,157,0,0" 
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Bold" VerticalAlignment="Top" 
-                FontSize="14px" RenderTransformOrigin="0.496,-0.784"/>
-            <Label Content="Sangkarah" HorizontalAlignment="Left" Margin="168,175,0,0" 
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Normal" VerticalAlignment="Top"
-                FontSize="10px" RenderTransformOrigin="0.496,-0.784"/>
-            <Path Stroke="Black" StrokeThickness="2" Margin="279,170,65,424" Stretch="Fill">
+        </Grid>
+        <Grid Grid.Row="1" Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="0.7*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="1*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="4*"/>
+                <ColumnDefinition Width="2*"/>
+            </Grid.ColumnDefinitions>
+            <Rectangle Width="350" Height="500" HorizontalAlignment="Left"
+                       VerticalAlignment="Top" Fill="#FFFFFF" RadiusX="30" RadiusY="30"
+                       Margin="0,15,0,0" Grid.RowSpan="8" Grid.ColumnSpan="3"/>
+            <Image  Source="/Resources/Images/Avatar.png" 
+                    Stretch="Fill" Grid.Row="0" Width="60" Height="60"
+                    HorizontalAlignment="Left" Grid.Column="0" 
+                    Margin="25,12,0,0"/>
+            <Label Content="Ngatemin" HorizontalAlignment="Right"  Grid.Row="0" 
+                Style="{StaticResource CustomFont}"  Grid.Column="1"
+                FontWeight="Bold" VerticalAlignment="Center" 
+                FontSize="14px" Margin="0,0,12,0"/>
+            <Label Content="Sangkarah" HorizontalAlignment="Right" Grid.Row="0" 
+                Style="{StaticResource CustomFont}"  Grid.Column="1"
+                FontWeight="Normal" VerticalAlignment="Center" 
+                FontSize="10px" Margin="0,27,19,0"/>
+            <Path Stroke="Black" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
+                  Grid.Row="0" Grid.Column="2" Margin="25,9,0,0" HorizontalAlignment="Left">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -97,12 +69,16 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
-            <Label Content="Akun" HorizontalAlignment="Left" Margin="35,236,0,0" 
-                Style="{StaticResource CustomFont}" 
+            <Label Content="Akun" HorizontalAlignment="Left" Grid.Row="1"
+                Style="{StaticResource CustomFont}" Margin="30,25,0,0"
                 FontWeight="Bold" VerticalAlignment="Top" 
                 FontSize="14px" RenderTransformOrigin="0.496,-0.784"/>
-            <Rectangle Fill="#645CAA" StrokeThickness="2" Margin="42,264,284,336" RenderTransformOrigin="0.5,1.743" />
-            <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="6,268,-36,331" RenderTransformOrigin="0.5,0.5" >
+            <Rectangle Fill="#645CAA" StrokeThickness="2" Margin="20,45,3,0"
+                       RenderTransformOrigin="0.5,1.743" Grid.Row="1" 
+                       Width="25" Height="2" VerticalAlignment="Top"/>
+            <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="1.8" 
+                  Grid.Row="1" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Top"
+                  Margin="9,47,24,0" Width="350" Grid.ColumnSpan="3">
                 <Line.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="1"/>
@@ -112,12 +88,16 @@
                     </TransformGroup>
                 </Line.RenderTransform>
             </Line>
-            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="42,286,276,286" />
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
+                     Grid.Row="2" Width="35" Margin="0,0,16,10" HorizontalAlignment="Right" Height="35" VerticalAlignment="Bottom"/>
+            <Image Source="/Resources/Images/profile.png" Stretch="Fill"
+                   Grid.Row="2" Width="16" Height="15" Margin="0,0,26,0" HorizontalAlignment="Right" VerticalAlignment="Center"/>
             <Label Content="Nama Pengguna" HorizontalAlignment="Center"
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Normal" VerticalAlignment="Center"
+                Style="{StaticResource CustomFont}" Grid.Row="2" Grid.Column="1"
+                FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,0"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Margin="282,297,62,297" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
+                  Grid.Row="2" Grid.Column="2" Margin="25,0,0,0" HorizontalAlignment="Left">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -127,12 +107,16 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
-            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="42,333,276,239" />
-            <Label Content="Data" HorizontalAlignment="Center" Margin="0,333,0,0" 
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Normal" VerticalAlignment="Top"
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
+                     Grid.Row="3" Width="36" Margin="0,0,16,0" HorizontalAlignment="Right" Height="34" VerticalAlignment="Top" />
+            <Image Source="/Resources/Images/folder-add.png" Stretch="Fill"
+                   Grid.Row="3" Margin="0,6,24,0" HorizontalAlignment="Right" Width="20" Height="18" VerticalAlignment="Top"/>
+            <Label Content="Data" HorizontalAlignment="Center"
+                Style="{StaticResource CustomFont}" Grid.Row="3" Grid.Column="1"
+                FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,8"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Margin="282,344,62,250" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
+                  Grid.Row="3" Grid.Column="2" Margin="25,0,0,9" HorizontalAlignment="Left">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -142,12 +126,16 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
-            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="42,379,276,193" />
-            <Label Content="Kata Sandi" HorizontalAlignment="Center" Margin="0,379,0,0" 
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Normal" VerticalAlignment="Top"
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
+                     Grid.Row="4" Width="36" Margin="0,8,16,0" HorizontalAlignment="Right" Height="34" VerticalAlignment="Top" />
+            <Image Source="/Resources/Images/kunci.png" Stretch="Fill"
+                   Grid.Row="4" Width="16" Height="16" Margin="0,16,26,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+            <Label Content="Sandi" HorizontalAlignment="Center"
+                Style="{StaticResource CustomFont}" Grid.Row="4" Grid.Column="1"
+                FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,10"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Margin="282,386,62,208" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
+                  Grid.Row="4" Grid.Column="2" Margin="25,0,0,11" HorizontalAlignment="Left">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -157,7 +145,9 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
-            <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="10,430,-40,169" RenderTransformOrigin="0.5,0.5" >
+            <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="0.9" 
+                  RenderTransformOrigin="0.5,0.5" Grid.Row="5" Grid.ColumnSpan="3" 
+                  Margin="9,0,24,55" Width="350" VerticalAlignment="Center">
                 <Line.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleY="1"/>
@@ -167,12 +157,17 @@
                     </TransformGroup>
                 </Line.RenderTransform>
             </Line>
-            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="42,448,276,124" />
-            <Label Content="Bantuan" HorizontalAlignment="Center" Margin="0,452,0,0" 
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Normal" VerticalAlignment="Top"
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
+                     Grid.Row="5" Width="36" Height="35" Margin="36,14,0,0" 
+                     VerticalAlignment="Top" HorizontalAlignment="Left" />
+            <Image Source="/Resources/Images/Group.png" Stretch="Fill"
+                   Grid.Row="5" Width="14" Height="14" Margin="46,24,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+            <Label Content="Bantuan" HorizontalAlignment="Center"
+                Style="{StaticResource CustomFont}" Grid.Row="5" Grid.Column="1"
+                FontWeight="Normal" VerticalAlignment="Center" Margin="25,5,0,0"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Margin="282,459,62,135" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
+                  Grid.Row="5" Grid.Column="2" Margin="25,5,0,0" HorizontalAlignment="Left">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -182,12 +177,16 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
-            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="42,493,276,79" />
-            <Label Content="Kontak" HorizontalAlignment="Center" Margin="0,497,0,0" 
-                Style="{StaticResource CustomFont}" 
-                FontWeight="Normal" VerticalAlignment="Top"
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
+                     Grid.Row="6" Margin="36,7,0,15" HorizontalAlignment="Left" Width="36" />
+            <Image Source="/Resources/Images/kontak.png" Stretch="Fill"
+                   Grid.Row="6" Height="14" Margin="46,0,0,26" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="14"/>
+            <Label Content="Kontak" HorizontalAlignment="Center"
+                Style="{StaticResource CustomFont}" Grid.Row="6" Grid.Column="1"
+                FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,10"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Margin="282,504,62,90" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
+                  Grid.Row="6" Grid.Column="2" Margin="25,0,0,10" HorizontalAlignment="Left">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -197,7 +196,12 @@
                     </PathGeometry>
                 </Path.Data>
             </Path>
-            <Image Margin="129,583,211,11" Source="/Resources/Images/c.png" Stretch="Fill" RenderTransformOrigin="-0.7,1.498"/>
+            <Image Grid.Row="7" Grid.Column="1" Source="/Resources/Images/c.png" 
+                   Stretch="Fill" RenderTransformOrigin="-0.7,1.498" Margin="0,0,58,9"
+                   Width="13" Height="13" VerticalAlignment="Bottom"/>
+            <Label Content="2023 DESTROYER" HorizontalAlignment="Center" Margin="30,0,0,5" 
+                   VerticalAlignment="Bottom" FontSize="9" Foreground="#9D9D9D" Grid.Row="7"
+                   Grid.Column="1"/>
         </Grid>
     </Grid>
 </Window>
