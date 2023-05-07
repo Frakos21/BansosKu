@@ -12,14 +12,22 @@
     <None Remove="Resources\Images\c.png" />
     <None Remove="Resources\Images\cari.png" />
     <None Remove="Resources\Images\chevron-right.png" />
+    <None Remove="Resources\Images\data.png" />
     <None Remove="Resources\Images\ellypsis.png" />
     <None Remove="Resources\Images\image-register.png" />
     <None Remove="Resources\Images\padlock 1.png" />
+    <None Remove="Resources\Images\Riwayat.png" />
     <None Remove="Resources\Images\Sidebar.png" />
+    <None Remove="Resources\Images\Status Permintaan.png" />
+    <None Remove="Resources\Images\TiketKu.png" />
     <None Remove="Resources\Images\user2.png" />
     <None Remove="Resources\Images\Vector.png" />
     <None Remove="Roboto-Bold.ttf" />
     <None Remove="Roboto-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\Images\data.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -37,7 +45,10 @@
     <Resource Include="Resources\Images\image-register.png" />
     <Resource Include="Resources\Images\logo.png" />
     <Resource Include="Resources\Images\padlock 1.png" />
+    <Resource Include="Resources\Images\Riwayat.png" />
     <Resource Include="Resources\Images\Sidebar.png" />
+    <Resource Include="Resources\Images\Status Permintaan.png" />
+    <Resource Include="Resources\Images\TiketKu.png" />
     <Resource Include="Resources\Images\user2.png" />
     <Resource Include="Resources\Images\Vector.png" />
     <Resource Include="Resources\Font\Roboto-Bold.ttf" />

@@ -1,0 +1,192 @@
+﻿<Window x:Class="BansosKu.Page.BansosPage.Bansos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BansosKu.Page.BansosPage"
+        mc:Ignorable="d"
+        Title="Bansospalsu" Height="620" Width="350">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="RoundedButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" CornerRadius="13" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid Background="#645CAA">
+            <Label Content="BansosKu" HorizontalAlignment="Left" Margin="68,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.346,-0.499"
+                   Style="{StaticResource CustomFont}" FontSize="18px" FontWeight="Bold" 
+                   Foreground="#ffffff"/>
+            <Image Margin="31,32,301,554" Source="/Resources/Images/Vector.png" Stretch="Fill"/>
+            <Image Margin="293,10,10,547" Source="/Resources/Images/Avatar.png" Stretch="Fill"/>
+
+        </Grid>
+        <Grid>
+            <Rectangle Width="350" Height="620" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,115,0,0" Fill="#FFFFFF" RadiusX="30" RadiusY="30"/>
+            <Rectangle HorizontalAlignment="Center" Height="35" Margin="0,68,0,0" VerticalAlignment="Top" Width="311" Fill="WhiteSmoke" RadiusX="13" RadiusY="13"/>
+            <Image Margin="35,79,301,511" Source="/Resources/Images/cari.png" Stretch="Fill"/>
+
+            <Label Content="Cari Info Bansos" HorizontalAlignment="Left" Margin="68,74,0,0" VerticalAlignment="Top"
+               Foreground="#645CAA" Style="{StaticResource CustomFont}" FontWeight="Bold"/>
+
+
+            <Label Content="Info Bansos" HorizontalAlignment="Left" Margin="19,377,0,0" 
+                Style="{StaticResource CustomFont}" 
+                FontWeight="Bold" VerticalAlignment="Top" 
+                FontSize="14px" RenderTransformOrigin="0.496,-0.784"/>
+            <Rectangle Fill="#645CAA" StrokeThickness="2" Margin="50,409,276,190" RenderTransformOrigin="0.5,1.743" />
+
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="44,236,272,336" />
+            <Label Content="Riwayat" HorizontalAlignment="Left"
+                Style="{StaticResource CustomFont}" 
+                FontWeight="Bold" VerticalAlignment="Top"
+                FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106" Margin="125,240,0,0"/>
+            <Path Stroke="#645CAA" StrokeThickness="2" Margin="285,247,59,347" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <LineSegment Point="40,10" />
+                            <LineSegment Point="0,20" />
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="46,283,272,289" />
+            <Label Content="Status Permintaan" HorizontalAlignment="Left" Margin="125,287,0,0" 
+                Style="{StaticResource CustomFont}" 
+                FontWeight="Bold" VerticalAlignment="Top"
+                FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
+            <Path Stroke="#645CAA" StrokeThickness="2" Margin="285,298,59,296" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <LineSegment Point="40,10" />
+                            <LineSegment Point="0,20" />
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="46,329,272,243" />
+            <Label Content="Data" HorizontalAlignment="Left" Margin="125,333,0,0" 
+                Style="{StaticResource CustomFont}" 
+                FontWeight="Bold" VerticalAlignment="Top"
+                FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
+            <Path Stroke="#645CAA" StrokeThickness="2" Margin="285,340,59,254" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <LineSegment Point="40,10" />
+                            <LineSegment Point="0,20" />
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="10,414,-40,184" RenderTransformOrigin="0.5,0.5" >
+                <Line.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Line.RenderTransform>
+            </Line>
+            <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="46,184,272,387" />
+            <Image Margin="53,188,279,394" Source="/Resources/Images/TiketKu.png" Stretch="Fill"/>
+            <Image Margin="53,243,279,343" Source="/Resources/Images/Riwayat.png" Stretch="Fill"/>
+            <Image Margin="50,290,276,289" Source="/Resources/Images/Status Permintaan.png" Stretch="Fill" Height="NaN" Width="NaN"/>
+            <Label Content="TiketKu" HorizontalAlignment="Left" Margin="125,188,0,0" 
+                Style="{StaticResource CustomFont}" 
+                FontWeight="Bold" VerticalAlignment="Top"
+                FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
+            <Path Stroke="#645CAA" StrokeThickness="2" Margin="285,196,59,398" Stretch="Fill" RenderTransformOrigin="1.167,3.141">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,0">
+                            <LineSegment Point="40,10" />
+                            <LineSegment Point="0,20" />
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+            </Path>
+            <Rectangle Fill="#FFFFFF" StrokeThickness="2" Margin="22,425,89,22" RenderTransformOrigin="0.5,1.743" Height="NaN" />
+            <Image Margin="53,336,279,250" Source="/Resources/Images/data.png" Stretch="Fill" Height="NaN"/>
+            <ScrollViewer Margin="0,424,0,4" Height="NaN" RenderTransformOrigin="0.5,0.5">
+                <ScrollViewer.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="-1"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </ScrollViewer.RenderTransform>
+            </ScrollViewer>
+        </Grid>
+        <Label Content="BansosKu" HorizontalAlignment="Left" Margin="26,126,0,0" 
+                Style="{StaticResource CustomFont}" 
+                FontWeight="Bold" VerticalAlignment="Top" 
+                FontSize="14px" RenderTransformOrigin="0.496,-0.784"/>
+        <Rectangle Fill="#645CAA" StrokeThickness="2" Margin="51,153,275,447" RenderTransformOrigin="0.5,1.743" />
+        <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="0.9" Margin="10,157,-40,442" RenderTransformOrigin="0.5,0.5" >
+            <Line.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform ScaleY="1"/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Line.RenderTransform>
+        </Line>
+    </Grid>
+</Window>
