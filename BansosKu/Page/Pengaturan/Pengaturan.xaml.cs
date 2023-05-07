@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BansosKu.Page.Data_Page;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -26,7 +27,9 @@ namespace BansosKu.Page.Pengaturan
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Data data = new Data();
+            this.Close();
+            data.Show();
         }
     }
 }

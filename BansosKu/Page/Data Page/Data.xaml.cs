@@ -29,9 +29,5 @@ namespace BansosKu.Page.Data_Page
 
         }
 
-        private void tbNama_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

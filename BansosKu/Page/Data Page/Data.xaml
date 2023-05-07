@@ -80,7 +80,7 @@
                    FontSize="15px"/>
             <TextBox HorizontalAlignment="Center" Margin="0,159,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="266" 
                      RenderTransformOrigin="0.308,-1.668" Height="30" 
-                     x:Name="tbNama" TextChanged="tbNama_TextChanged"/>
+                     x:Name="tbNama"/>
             <Label Content="0/30" HorizontalAlignment="Left" Margin="280,189,0,0" 
                 Style="{StaticResource CustomFont}" 
                 FontWeight="Regular" VerticalAlignment="Top"

@@ -1,6 +1,7 @@
 ﻿using APILibrary.API;
 using BansosKu.Model;
 using BansosKu.Page.Home;
+using BansosKu.Page.Pengaturan;
 using BansosKu.Page.Register;
 using System;
 using System.Collections.Generic;
@@ -59,9 +60,9 @@ namespace BansosKu
                 else
                 {
                     MessageBox.Show("Login Berhasil");
-                    Home home = new Home();
+                    Pengaturan set = new Pengaturan();
                     this.Close();
-                    home.Show();
+                    set.Show();
                 }
             }
         }
