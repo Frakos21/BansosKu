@@ -17,9 +17,11 @@
             <Setter Property="HorizontalAlignment"
                     Value="Left"/>
             <Setter Property="Foreground"
-                    Value="Black"/>
+                    Value="White"/>
             <Setter Property="FontSize"
-                    Value="20"/>
+                    Value="16"/>
+            <Setter Property="FontWeight"
+                    Value="Medium"/>
         </Style>
 
         <Style TargetType="ToolTip" x:Key="tt_style">
@@ -82,8 +84,8 @@
                     <TextBlock Grid.Row="1"
                                Grid.Column="0"
                                Margin ="73,-20,0,0"
-                               Text="M E N U"
-                               Foreground="Black"
+                               Text="BansosKu"
+                               Foreground="White"
                                FontSize="22"
                                Background="Transparent"
                                HorizontalAlignment="Left"
@@ -118,7 +120,7 @@
                                             Storyboard.TargetProperty="Width"
                                             BeginTime="0:0:0"
                                             From="230" To="65"
-                                            Duration = "0:0:0:2">
+                                            Duration = "0:0:0:0.5">
                                         </DoubleAnimation>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -131,8 +133,7 @@
                                             Storyboard.TargetProperty="Width"
                                             BeginTime="0:0:0"
                                             From="65" To="230"
-                                            Duration="0:0:0:3">
-                                            
+                                            Duration="0:0:0:0.5">
                                         </DoubleAnimation>
                                     </Storyboard>
                                 </BeginStoryboard>
@@ -141,31 +142,123 @@
 
                     </ToggleButton>
                 </Grid>
-                <ListViewItem x:Name="LV"
+                <ListView x:Name="LV"
                               Background="Transparent"
                               BorderBrush="Transparent"
                               ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    
+                    <!--// HOME //-->
+                    
                     <ListViewItem HorizontalAlignment="Left"
                                   Margin="0,0,0,15">
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
-                            <Image Source="\..\..\Resources\Images\Home.png"
-                                   Margin="12,0,0,0" Stretch="None"/>
-                            <TextBlock Text="Home"
-                                       Margin="25,0,0,0"
+                            <Image Source="/Resources/Images/Home.png"
+                                   Margin="10,0,0,0" Stretch="None"/>
+                            <TextBlock Text="Beranda"
+                                       Margin="20,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+                        
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_home"
+                                     Content="Beranda"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+                        
+                    </ListViewItem>
+
+                    <!--// BansosKu //-->
+                    
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Bansosku.png"
+                                   Margin="8,0,0,0" Stretch="None"/>
+                            <TextBlock Text="BansosKu"
+                                       Margin="21,0,0,0"
                                        Style="{StaticResource font_style}"/>
                         </StackPanel>
 
                         <ListViewItem.ToolTip>
 
-                            <ToolTip x:Name="tt_home"
-                                     Content="Home"
+                            <ToolTip x:Name="tt_Bansosku"
+                                     Content="BansosKu"
                                      Style="{StaticResource tt_style}"/>
                         </ListViewItem.ToolTip>
-                        
+
                     </ListViewItem>
-                    
-                </ListViewItem>
+
+                    <!--// BansosKu //-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Riwayat.png"
+                                   Margin="8,0,0,0" Stretch="None"/>
+                            <TextBlock Text="Riwayat"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Riwayat"
+                                     Content="Riwayat"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--// Pengaturan //-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Pengaturan.png"
+                                   Margin="8,0,0,0" Stretch="None"/>
+                            <TextBlock Text="Pengaturan"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Pengaturan"
+                                     Content="Pengaturan"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--// Keluar //-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Keluar.png"
+                                   Margin="3,0,0,0" Stretch="None"/>
+                            <TextBlock Text="Keluar"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Keluar"
+                                     Content="Keluar"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                </ListView>
+                
             </StackPanel>
 
         </Grid>
