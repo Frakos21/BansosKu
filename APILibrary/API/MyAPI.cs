@@ -75,6 +75,28 @@ namespace APILibrary.API
                 return res;
             }
             return res;
+        }
+        public int updateUser(UserModel user,int id)
+        {
+            try
+            {
+                var client = new RestClient(baseurl);
+                var request = new RestRequest("Auth/UpdateUser/"+id, Method.Put);
+                request.AddHeader("Content-Type", "application/json");
+                var body = JsonConvert.SerializeObject(user);
+                request.AddParameter("application/json", body, ParameterType.RequestBody);
+                var response = client.Execute(request);
+                var responseContent = JsonConvert.DeserializeObject<String>(response.Content.ToString());
+                if(responseContent == "success")
+                {
+                    return 1;
+                }
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            return -1;
 
         }
     }

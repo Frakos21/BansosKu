@@ -1,4 +1,6 @@
 ﻿using APILibrary.API;
+using APILibrary.Model;
+using BansosKu.Page.Pengaturan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,10 +22,25 @@ namespace BansosKu.Page.Data_Page
     /// </summary>
     public partial class Data : Window
     {
+        private UserModel myUser;
+        private UserModel updateUser = new UserModel();
+        PengaturanPage set = new PengaturanPage();
         MyAPI _api = new MyAPI();
         public Data()
         {
             InitializeComponent();
+            getMyUser();
+        }
+
+        private void getMyUser()
+        {
+            myUser = _api.getUserById(AppSettings.Default.id);
+            tbNik.Text = myUser.NIK;
+            tbNama.Text = myUser.Fullname;
+            tbAlamat.Text = myUser.Alamat;
+            tbKTP.Text = myUser.FotoKTP;
+            tbRumah.Text = myUser.FotoRumah;
+            tbPendapatan.Text = myUser.Pendapatan;
         }
 
         private void BtnKirim_Click(object sender, RoutedEventArgs e)
@@ -34,9 +51,33 @@ namespace BansosKu.Page.Data_Page
             }
             else
             {
-                
+                updateUser.NIK = tbNik.Text;
+                updateUser.Fullname = tbNama.Text;
+                updateUser.Role = myUser.Role;
+                updateUser.Password = myUser.Password;
+                updateUser.Alamat = tbAlamat.Text;
+                updateUser.FotoKTP = tbKTP.Text;
+                updateUser.FotoRumah = tbRumah.Text;
+                updateUser.Pendapatan = tbPendapatan.Text;
+                var res = _api.updateUser(updateUser,myUser.Id);
+                if (res != -1)
+                {
+                    MessageBox.Show("Update Berhasil");
+                    this.Close();
+                    set.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Update Gagal");
+                }
+
             }
         }
 
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            set.Show();
+        }
     }
 }

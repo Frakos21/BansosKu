@@ -68,7 +68,13 @@
             <Label Content="Data" HorizontalAlignment="Left" Margin="68,23,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.346,-0.499"
                    Style="{StaticResource CustomFont}" FontSize="21px" FontWeight="Bold" 
                    Foreground="#ffffff"/>
-            <Image Margin="31,32,301,554" Source="/Resources/Images/Vector.png" Stretch="Fill"/>
+            <Button Height="20" Width="20" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="30,-510,0,12" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Images/Vector.png"/>
+                </Button.Background>
+                       
+            </Button>
         </Grid>
         <Grid>
             <Rectangle Width="350" Height="620" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,115,0,0" Fill="#FFFFFF" RadiusX="30" RadiusY="30"/>

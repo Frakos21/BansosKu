@@ -24,6 +24,7 @@
     <None Remove="Resources\Images\padlock 1.png" />
     <None Remove="Resources\Images\Pengaturan.png" />
     <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\right.png" />
     <None Remove="Resources\Images\Riwayat.png" />
     <None Remove="Resources\Images\Sidebar.png" />
     <None Remove="Resources\Images\user2.png" />
@@ -62,6 +63,7 @@
     <Resource Include="Resources\Images\padlock 1.png" />
     <Resource Include="Resources\Images\Pengaturan.png" />
     <Resource Include="Resources\Images\profile.png" />
+    <Resource Include="Resources\Images\right.png" />
     <Resource Include="Resources\Images\Riwayat.png" />
     <Resource Include="Resources\Images\Sidebar.png" />
     <Resource Include="Resources\Images\user2.png" />

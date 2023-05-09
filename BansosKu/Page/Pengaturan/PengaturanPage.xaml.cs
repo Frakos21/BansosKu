@@ -1,6 +1,7 @@
 ﻿using APILibrary.API;
 using APILibrary.Model;
 using BansosKu.Page.Data_Page;
+using BansosKu.Page.Home;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,6 +49,13 @@ namespace BansosKu.Page.Pengaturan
             Data data = new Data();
             this.Close();
             data.Show();
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            HomePage home = new HomePage();
+            this.Close();
+            home.Show();
         }
     }
 }
