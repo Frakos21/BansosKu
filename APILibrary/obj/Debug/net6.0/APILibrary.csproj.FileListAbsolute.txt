@@ -10,3 +10,27 @@ D:\asp-project\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.dll
 D:\asp-project\BansosKu\APILibrary\obj\Debug\net6.0\refint\APILibrary.dll
 D:\asp-project\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.pdb
 D:\asp-project\BansosKu\APILibrary\obj\Debug\net6.0\ref\APILibrary.dll
+C:\BansosKu\APILibrary\bin\Debug\net6.0\APILibrary.deps.json
+C:\BansosKu\APILibrary\bin\Debug\net6.0\APILibrary.dll
+C:\BansosKu\APILibrary\bin\Debug\net6.0\APILibrary.pdb
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.csproj.AssemblyReference.cache
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.GeneratedMSBuildEditorConfig.editorconfig
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.AssemblyInfoInputs.cache
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.AssemblyInfo.cs
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.csproj.CoreCompileInputs.cache
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.dll
+C:\BansosKu\APILibrary\obj\Debug\net6.0\refint\APILibrary.dll
+C:\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.pdb
+C:\BansosKu\APILibrary\obj\Debug\net6.0\ref\APILibrary.dll
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\bin\Debug\net6.0\APILibrary.deps.json
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\bin\Debug\net6.0\APILibrary.dll
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\bin\Debug\net6.0\APILibrary.pdb
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.csproj.AssemblyReference.cache
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.AssemblyInfoInputs.cache
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.AssemblyInfo.cs
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.csproj.CoreCompileInputs.cache
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.dll
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\refint\APILibrary.dll
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\APILibrary.pdb
+D:\Kuliah\SEMESTER 4\KPL\BansosKu\APILibrary\obj\Debug\net6.0\ref\APILibrary.dll

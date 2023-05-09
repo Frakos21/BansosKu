@@ -1,0 +1,317 @@
+﻿<Window x:Class="BansosKu.Page.Home.HomePage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BansosKu.Page.Home"
+        mc:Ignorable="d"
+        Title="Home" Height="620" Width="350">
+    <Window.Resources>
+        <ImageBrush x:Key="tb_mouse_over"
+                    ImageSource="/Resources/Images/Sidebar.png"/>
+        <Style x:Key="font_style" TargetType="TextBlock">
+            <Setter Property="FontFamily"
+                    Value="/../../Resources/Font/Roboto-Bold.ttf #Roboto"/>
+            <Setter Property="VerticalAlignment"
+                    Value="center"/>
+            <Setter Property="HorizontalAlignment"
+                    Value="Left"/>
+            <Setter Property="Foreground"
+                    Value="White"/>
+            <Setter Property="FontSize"
+                    Value="16"/>
+            <Setter Property="FontWeight"
+                    Value="Medium"/>
+        </Style>
+
+        <Style TargetType="ToolTip" x:Key="tt_style">
+            <Setter Property="Placement" Value="Right"/>
+            <Setter Property="Height" Value="40"/>
+            <Setter Property="Width" Value="100"/>
+            <Setter Property="Margin" Value="20,0,0,0"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontFamily" Value="/../../Resources/Font/Roboto-Bold.ttf"/>
+            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="PlacementRectangle" Value="60,0,0,0"/>
+            <Setter Property="HorizontalOffset" Value="15"/>
+            <Setter Property="VerticalOffset" Value="6"/>
+            <Setter Property="HasDropShadow" Value="True"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            
+        </Style>
+        
+        <Style x:Key="tb_style" TargetType="{x:Type ToggleButton}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToggleButton}">
+                        <Border x:Name="border"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Background="{TemplateBinding Background}"
+                                SnapsToDevicePixels="True">
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                            </Trigger>
+                            
+                            <Trigger Property="IsChecked" Value="true">
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                                <Setter Property="Background"
+                                        TargetName="border"
+                                        Value="{StaticResource tb_mouse_over}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    <Grid Background="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="55"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tbsearch" Width="200" Height="30" Grid.Column="1" Grid.Row="0" 
+                     Text="Cari Info Bansos" FontFamily="Roboto" FontSize="12" FontWeight="SemiBold" Foreground="#645caa"
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+            <Image Source="/Resources/Images/cari.png" Grid.Column="1" Grid.Row="0" Width="12px" Margin="-150,0,0,0"/>
+            <Image Source="/Resources/Images/Avatar.png" Grid.Column="2" Grid.Row="0"
+                   Width="42" Margin="-20,0,0,0"/>
+            <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Height="100" Width="240" RadiusX="10" RadiusY="10" Fill="#645caa"
+                               Grid.Row="0"/>
+                    <Rectangle Height="100" Width="240" RadiusX="10" RadiusY="10" Fill="#645caa"
+                               Grid.Row="1" Margin="20"/>
+                    <Rectangle Height="30" Width="160" RadiusX="10" RadiusY="10" Fill="White"
+                               Grid.Row="1" Margin="-90,-70,20,20" Stroke="#645caa"/>
+                    <Label Grid.Row="1" Foreground="#645caa" Content="Status Permintaan Bansos" Margin="20,10,0,0"/>
+                    <Label Content="Info Bansos" Grid.Row="2" FontWeight="Bold" Margin="20,0,0,0" FontSize="15"/>
+                    <Label Content="Lihat Semua" Grid.Row="2" Margin="190,0,0,0" Foreground="#645caa" FontWeight="SemiBold"/>
+                    <Rectangle Width="240" RadiusX="10" RadiusY="10" Fill="White"
+                               Grid.Row="3" Margin="0,20,0,0" Stroke="#645caa" Height="200"/>
+                    <Rectangle Width="240" Fill="#645caa"
+                               Grid.Row="3" Margin="0,120,0,0" Stroke="#645caa" Height="100"/>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+        <Grid x:Name="nav_pnl"
+              HorizontalAlignment="Left"
+              Width="55"
+              Background="#645caa">
+            <StackPanel x:Name="st_pnl">
+                <Grid Height="60">
+                    <TextBlock Grid.Row="1"
+                               Grid.Column="0"
+                               Margin ="73,-20,0,0"
+                               Text="BansosKu"
+                               Foreground="White"
+                               FontSize="22"
+                               Background="Transparent"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Center"
+                               Style="{StaticResource font_style}">
+                        <TextBlock.Effect>
+                            <DropShadowEffect BlurRadius="10"
+                                              ShadowDepth="1"
+                                              Direction="-90"
+                                              Color="#645CAA"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <ToggleButton x:Name="button_side"
+                                  Grid.Column="0"
+                                  VerticalAlignment="Center"
+                                  HorizontalAlignment="Left"
+                                  Margin="12,-20,0,0"
+                                  Height="30"
+                                  Width="30"
+                                  BorderThickness="0"
+                                  Style="{StaticResource tb_style}">
+                        <ToggleButton.Background>
+                            <ImageBrush ImageSource="/Resources/Images/Sidebar.png" Stretch="Fill"/>
+                        </ToggleButton.Background>
+                        <ToggleButton.Triggers>
+                            <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="HideStackPanel">
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="nav_pnl"
+                                            Storyboard.TargetProperty="Width"
+                                            BeginTime="0:0:0"
+                                            From="230" To="65"
+                                            Duration = "0:0:0:0.5">
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="ToggleButton.Checked">
+                                <BeginStoryboard>
+                                    <Storyboard x:Name="ShowStackPanel">
+                                        <DoubleAnimation
+                                            Storyboard.TargetName="nav_pnl"
+                                            Storyboard.TargetProperty="Width"
+                                            BeginTime="0:0:0"
+                                            From="65" To="230"
+                                            Duration="0:0:0:0.5">
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </ToggleButton.Triggers>
+                    </ToggleButton>
+                </Grid>
+                <ListView x:Name="LV"
+                              Background="Transparent"
+                              BorderBrush="Transparent"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                    
+                    <!--// HOME //-->
+                    
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Home.png"
+                                   Margin="10,0,0,0" Stretch="None" Name ="imgHome" MouseLeftButtonUp="imgHome_Click"/>
+                            <TextBlock Text="Beranda"
+                                       Margin="20,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+                        
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_home"
+                                     Content="Beranda"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+                        
+                    </ListViewItem>
+
+                    <!--// BansosKu //-->
+                    
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Bansosku.png"
+                                   Margin="8,0,0,0" Stretch="None" Name ="imgBansosKu" MouseLeftButtonUp="imgBansosKu_Click"/>
+                            <TextBlock Text="BansosKu"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Bansosku"
+                                     Content="BansosKu"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--// BansosKu //-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Riwayat.png"
+                                   Margin="8,0,0,0" Stretch="None" Name ="imgRiwayat" MouseLeftButtonUp="imgRiwayat_Click"/>
+                            <TextBlock Text="Riwayat"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Riwayat"
+                                     Content="Riwayat"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--// Pengaturan //-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Pengaturan.png"
+                                   Margin="8,0,0,0" Stretch="None" Name ="imgPengaturan" MouseLeftButtonUp="imgPengaturan_Click"/>
+                            <TextBlock Text="Pengaturan"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Pengaturan"
+                                     Content="Pengaturan"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                    <!--// Keluar //-->
+
+                    <ListViewItem HorizontalAlignment="Left"
+                                  Margin="0,0,0,15">
+                        <StackPanel Orientation="Horizontal"
+                                    Width="230">
+                            <Image Source="/Resources/Images/Keluar.png"
+                                   Margin="3,0,0,0" Stretch="None" Name ="imgKeluar" MouseLeftButtonUp="imgKeluar_Click"/>
+                            <TextBlock Text="Keluar"
+                                       Margin="21,0,0,0"
+                                       Style="{StaticResource font_style}"/>
+                        </StackPanel>
+
+                        <ListViewItem.ToolTip>
+
+                            <ToolTip x:Name="tt_Keluar"
+                                     Content="Keluar"
+                                     Style="{StaticResource tt_style}"/>
+                        </ListViewItem.ToolTip>
+
+                    </ListViewItem>
+
+                </ListView>
+                
+            </StackPanel>
+
+        </Grid>
+    </Grid>
+</Window>
