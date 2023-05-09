@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using APILibrary.API;
+using APILibrary.Model;
 
 namespace BansosKu.Page.BansosPage
 {
@@ -19,9 +21,19 @@ namespace BansosKu.Page.BansosPage
     /// </summary>
     public partial class Bansos1 : Window
     {
+      
+        private MyAPI _api = new MyAPI();
         public Bansos1()
         {
             InitializeComponent();
+            List<BansosModel> listItems = _api.GetAllBansos();     
+            GroupBy.ItemsSource = listItems;
+
+        }
+     
+        private void GroupBy_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
         }
     }
 }

@@ -107,7 +107,7 @@
             </Grid.ColumnDefinitions>
             <Rectangle Width="350" Height="500" HorizontalAlignment="Left"
                        VerticalAlignment="Top" Fill="#FFFFFF" RadiusX="30" RadiusY="30"
-                       Margin="0,15,0,0" Grid.RowSpan="8" Grid.ColumnSpan="3"/>
+                       Margin="-7,15,1,0" Grid.RowSpan="8" Grid.ColumnSpan="3"/>
             <Label Content="BansosKu" HorizontalAlignment="Left" Grid.Row="0" 
                 Style="{StaticResource CustomFont}" Margin="17,38,0,0"
                 FontWeight="Bold" VerticalAlignment="Top" 
@@ -148,7 +148,7 @@
 
 
             <Ellipse Fill="White" Stroke="#E3E3E3" Grid.Row="2" StrokeThickness="0.9" Margin="40,10,40,10" />
-            <Image Margin="46,0,0,0" Grid.Row="2" Source="/Resources/Images/Riwayat.png" Stretch="Fill" HorizontalAlignment="Left" Width="17" Height="19" VerticalAlignment="Center"/>
+            <Image Margin="46,0,46,17" Grid.Row="2" Source="/Resources/Images/Riwayat.png" Stretch="Fill" Height="19" VerticalAlignment="Bottom"/>
             <Label Content="Riwayat" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left" Margin="10,15,0,0" 
                 Style="{StaticResource CustomFont}" 
                 FontWeight="Normal" VerticalAlignment="Top"
@@ -206,6 +206,7 @@
                 </Path.Data>
             </Path>
 
+            
 
 
             <Label Content="Info Bansos" HorizontalAlignment="Left" Grid.Row="5"
@@ -227,20 +228,53 @@
                     </TransformGroup>
                 </Line.RenderTransform>
             </Line>
-            <ScrollViewer Grid.Row="5" Grid.ColumnSpan="3" Margin="0,34,0,10"/>
-            <Button Background="#FFFFFF"  Margin="10,35,10,0"
-                       RenderTransformOrigin="0.5,1.743" Grid.Row="5" Grid.ColumnSpan="2"
-                       Width="240" Height="70" VerticalAlignment="Top"/>
-            <Button Grid.Column="3" Content="Daftar" FontWeight="Bold" HorizontalAlignment="Left" Margin="-5,60,0,0" Grid.Row="5" VerticalAlignment="Top"/>
 
 
 
 
-            <Button Background="#FFFFFF" Margin="22,131,22,10"
-                       RenderTransformOrigin="0.5,1.743" Grid.Row="5" Grid.ColumnSpan="2"
-                       Width="240"/>
-            <Button Grid.Column="3" Content="Daftar" FontWeight="Bold" HorizontalAlignment="Left" Margin="-5,60,0,0" Grid.Row="5" VerticalAlignment="Top"/>
-            <Button Style="{DynamicResource Buttonroundedstyle}" Background="#645CAA" Width="70" Height="70" Grid.Column="3" Content="Daftar" FontWeight="Bold" HorizontalAlignment="Left" Margin="-23,60,0,10" Grid.Row="5" VerticalAlignment="Bottom"/>
+
+
+            <ListView  x:Name="GroupBy" Grid.Row="5" Grid.Column="0" Grid.RowSpan="4" Margin="0,30,-245,-20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <WrapPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="4*"/>
+                                    <ColumnDefinition Width="5*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="5*"/>
+                                    <RowDefinition Height="5*"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Grid.Row="0" Grid.RowSpan="2" VerticalAlignment="Center" Grid.Column="0" Source="{Binding Image}" Width="90" Height="90" />
+                                <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="10,0,0,0"  Content="{Binding Nama}" FontSize="14" FontWeight="Bold" Width="250"/>
+                                <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Content="{Binding Tanggal}" FontSize="10" Margin="10,0,0,0" FontWeight="Bold" />
+                                <Button Content="Daftar" Foreground="White" Grid.Column="1" Grid.RowSpan="2" Background="#645CAA" Width="68" Height="50" Margin="110,5,0,0"/>
+                                
+                                
+                                
+                   
+                            </Grid>
+                        </WrapPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            
+            
+            
+            
+        
+
+
+
+
+
+
+
+
         </Grid>
     </Grid>
 </Window>
