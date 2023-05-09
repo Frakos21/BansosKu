@@ -1,6 +1,7 @@
 ﻿using APILibrary.API;
 using BansosKu.Model;
 using BansosKu.Page.Home;
+using BansosKu.Page.Pengaturan;
 using BansosKu.Page.Register;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,7 @@ namespace BansosKu
     /// </summary>
     public partial class MainWindow : Window
     {
-     
+        HomePage home = new HomePage();
         private MyAPI _api = new MyAPI();
         public MainWindow()
         {
@@ -59,7 +60,6 @@ namespace BansosKu
                 else
                 {
                     MessageBox.Show("Login Berhasil");
-                    Home home = new Home();
                     this.Close();
                     home.Show();
                 }

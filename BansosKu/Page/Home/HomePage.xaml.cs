@@ -19,16 +19,15 @@ namespace BansosKu.Page.Home
     /// <summary>
     /// Interaction logic for Home.xaml
     /// </summary>
-    public partial class Home : Window
+    public partial class HomePage : Window
     {
-        public Home()
+        public HomePage()
         {
             InitializeComponent();
         }
 
         private void imgHome_Click(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
         }
 
         private void imgBansosKu_Click(object sender, MouseButtonEventArgs e)
@@ -38,7 +37,9 @@ namespace BansosKu.Page.Home
 
         private void imgPengaturan_Click(object sender, MouseButtonEventArgs e)
         {
+            PengaturanPage set = new PengaturanPage();
             this.Close();
+            set.Show();
         }
 
         private void imgKeluar_Click(object sender, MouseButtonEventArgs e)

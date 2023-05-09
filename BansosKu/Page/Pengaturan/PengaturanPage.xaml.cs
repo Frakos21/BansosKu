@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BansosKu.Page.Data_Page;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -17,11 +18,18 @@ namespace BansosKu.Page.Pengaturan
     /// <summary>
     /// Interaction logic for Pengaturan.xaml
     /// </summary>
-    public partial class Pengaturan : Window
+    public partial class PengaturanPage : Window
     {
-        public Pengaturan()
+        public PengaturanPage()
         {
             InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Data data = new Data();
+            this.Close();
+            data.Show();
         }
     }
 }

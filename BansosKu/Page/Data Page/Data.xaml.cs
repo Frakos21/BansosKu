@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APILibrary.API;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -19,6 +20,7 @@ namespace BansosKu.Page.Data_Page
     /// </summary>
     public partial class Data : Window
     {
+        MyAPI _api = new MyAPI();
         public Data()
         {
             InitializeComponent();
@@ -26,12 +28,15 @@ namespace BansosKu.Page.Data_Page
 
         private void BtnKirim_Click(object sender, RoutedEventArgs e)
         {
-
+            if (tbNama.Text.Equals("") || tbNik.Text.Equals("") || tbAlamat.Text.Equals("")||tbPendapatan.Text.Equals(""))
+            {
+                MessageBox.Show("Mohon diisi semuanya");
+            }
+            else
+            {
+                
+            }
         }
 
-        private void tbNama_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
