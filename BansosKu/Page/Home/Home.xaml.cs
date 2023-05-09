@@ -1,6 +1,8 @@
-﻿using System;
+﻿using BansosKu.Page.Pengaturan;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -24,6 +26,30 @@ namespace BansosKu.Page.Home
             InitializeComponent();
         }
 
+        private void imgHome_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgBansosKu_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgPengaturan_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgKeluar_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void imgRiwayat_Click(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
         //private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         //{
         //    Sidebar side = new Sidebar();

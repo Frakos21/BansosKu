@@ -75,6 +75,58 @@
         </Style>
     </Window.Resources>
     <Grid Background="White">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="55"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="55"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"/>
+                <RowDefinition Height="8*"/>
+            </Grid.RowDefinitions>
+            <TextBox x:Name="tbsearch" Width="200" Height="30" Grid.Column="1" Grid.Row="0" 
+                     Text="Cari Info Bansos" FontFamily="Roboto" FontSize="12" FontWeight="SemiBold" Foreground="#645caa"
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+                <TextBox.Template>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border BorderBrush="{TemplateBinding BorderBrush}"
+                    BorderThickness="{TemplateBinding BorderThickness}"
+                    CornerRadius="10">
+                            <ScrollViewer x:Name="PART_ContentHost"/>
+                        </Border>
+                    </ControlTemplate>
+                </TextBox.Template>
+            </TextBox>
+            <Image Source="/Resources/Images/cari.png" Grid.Column="1" Grid.Row="0" Width="12px" Margin="-150,0,0,0"/>
+            <Image Source="/Resources/Images/Avatar.png" Grid.Column="2" Grid.Row="0"
+                   Width="42" Margin="-20,0,0,0"/>
+            <ScrollViewer Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Hidden">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Rectangle Height="100" Width="240" RadiusX="10" RadiusY="10" Fill="#645caa"
+                               Grid.Row="0"/>
+                    <Rectangle Height="100" Width="240" RadiusX="10" RadiusY="10" Fill="#645caa"
+                               Grid.Row="1" Margin="20"/>
+                    <Rectangle Height="30" Width="160" RadiusX="10" RadiusY="10" Fill="White"
+                               Grid.Row="1" Margin="-90,-70,20,20" Stroke="#645caa"/>
+                    <Label Grid.Row="1" Foreground="#645caa" Content="Status Permintaan Bansos" Margin="20,10,0,0"/>
+                    <Label Content="Info Bansos" Grid.Row="2" FontWeight="Bold" Margin="20,0,0,0" FontSize="15"/>
+                    <Label Content="Lihat Semua" Grid.Row="2" Margin="190,0,0,0" Foreground="#645caa" FontWeight="SemiBold"/>
+                    <Rectangle Width="240" RadiusX="10" RadiusY="10" Fill="White"
+                               Grid.Row="3" Margin="0,20,0,0" Stroke="#645caa" Height="200"/>
+                    <Rectangle Width="240" Fill="#645caa"
+                               Grid.Row="3" Margin="0,120,0,0" Stroke="#645caa" Height="100"/>
+                </Grid>
+            </ScrollViewer>
+        </Grid>
         <Grid x:Name="nav_pnl"
               HorizontalAlignment="Left"
               Width="55"
@@ -139,7 +191,6 @@
                                 </BeginStoryboard>
                             </EventTrigger>
                         </ToggleButton.Triggers>
-
                     </ToggleButton>
                 </Grid>
                 <ListView x:Name="LV"
@@ -154,7 +205,7 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
                             <Image Source="/Resources/Images/Home.png"
-                                   Margin="10,0,0,0" Stretch="None"/>
+                                   Margin="10,0,0,0" Stretch="None" Name ="imgHome" MouseLeftButtonUp="imgHome_Click"/>
                             <TextBlock Text="Beranda"
                                        Margin="20,0,0,0"
                                        Style="{StaticResource font_style}"/>
@@ -176,7 +227,7 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
                             <Image Source="/Resources/Images/Bansosku.png"
-                                   Margin="8,0,0,0" Stretch="None"/>
+                                   Margin="8,0,0,0" Stretch="None" Name ="imgBansosKu" MouseLeftButtonUp="imgBansosKu_Click"/>
                             <TextBlock Text="BansosKu"
                                        Margin="21,0,0,0"
                                        Style="{StaticResource font_style}"/>
@@ -198,7 +249,7 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
                             <Image Source="/Resources/Images/Riwayat.png"
-                                   Margin="8,0,0,0" Stretch="None"/>
+                                   Margin="8,0,0,0" Stretch="None" Name ="imgRiwayat" MouseLeftButtonUp="imgRiwayat_Click"/>
                             <TextBlock Text="Riwayat"
                                        Margin="21,0,0,0"
                                        Style="{StaticResource font_style}"/>
@@ -220,7 +271,7 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
                             <Image Source="/Resources/Images/Pengaturan.png"
-                                   Margin="8,0,0,0" Stretch="None"/>
+                                   Margin="8,0,0,0" Stretch="None" Name ="imgPengaturan" MouseLeftButtonUp="imgPengaturan_Click"/>
                             <TextBlock Text="Pengaturan"
                                        Margin="21,0,0,0"
                                        Style="{StaticResource font_style}"/>
@@ -242,7 +293,7 @@
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
                             <Image Source="/Resources/Images/Keluar.png"
-                                   Margin="3,0,0,0" Stretch="None"/>
+                                   Margin="3,0,0,0" Stretch="None" Name ="imgKeluar" MouseLeftButtonUp="imgKeluar_Click"/>
                             <TextBlock Text="Keluar"
                                        Margin="21,0,0,0"
                                        Style="{StaticResource font_style}"/>
