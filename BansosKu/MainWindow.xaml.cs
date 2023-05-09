@@ -52,12 +52,14 @@ namespace BansosKu
             else
             {
                 var res = _api.Login(tbNik.Text,pw);
-                if(res == false)
+                if(res == -1)
                 {
                     MessageBox.Show("Login Gagal");
                 }
                 else
                 {
+                    AppSettings.Default.id = res;
+                    AppSettings.Default.Save();
                     MessageBox.Show("Login Berhasil");
                     Home home = new Home();
                     this.Close();

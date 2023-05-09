@@ -40,18 +40,17 @@ namespace APILibrary.API
             }
         }
 
-        public bool Login(string nik, string password) {
+        public int Login(string nik, string password) {
             var client = new RestClient(baseurl);
             var request = new RestRequest("Auth/Authentication/"+nik+"/"+password, Method.Get);
             request.AddHeader("Content-Type", "application/json");
             var response = client.Execute(request);
             var responseContent = JsonConvert.DeserializeObject<String>(response.Content);
-
-            if (responseContent == "false")
+            if (Convert.ToInt32(responseContent) == -1)
             {
-                return false;
+                return -1;
             }
-            return true;
+            return Convert.ToInt32(responseContent);
         }
     }
 }

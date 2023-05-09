@@ -22,6 +22,8 @@ namespace BansosKu.Page.Home
         public Home()
         {
             InitializeComponent();
+            var id = AppSettings.Default.id;
+
         }
     }
 }
