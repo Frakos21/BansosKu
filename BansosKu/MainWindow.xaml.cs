@@ -28,7 +28,7 @@ namespace BansosKu
     /// </summary>
     public partial class MainWindow : Window
     {
-     
+        HomePage home = new HomePage();
         private MyAPI _api = new MyAPI();
         public MainWindow()
         {

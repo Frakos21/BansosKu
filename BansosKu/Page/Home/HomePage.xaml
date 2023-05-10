@@ -201,7 +201,7 @@
                     <!--// HOME //-->
                     
                     <ListViewItem HorizontalAlignment="Left"
-                                  Margin="0,0,0,15">
+                                  Margin="0,0,0,15" Selected="ListViewItem_Selected">
                         <StackPanel Orientation="Horizontal"
                                     Width="230">
                             <Image Source="/Resources/Images/Home.png"

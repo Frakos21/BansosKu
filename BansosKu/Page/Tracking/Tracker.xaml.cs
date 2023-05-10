@@ -35,5 +35,12 @@ namespace BansosKu.Page.Tracking
             this.Close();
             home.Show();
         }
+
+        private void Rectangle_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Tracker1 track = new Tracker1();
+            this.Close();
+            track.Show();
+        }
     }
 }

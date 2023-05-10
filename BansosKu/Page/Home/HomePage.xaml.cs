@@ -1,4 +1,5 @@
-﻿using BansosKu.Page.Pengaturan;
+﻿using BansosKu.Page.BansosPage;
+using BansosKu.Page.Pengaturan;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,7 +33,9 @@ namespace BansosKu.Page.Home
 
         private void imgBansosKu_Click(object sender, MouseButtonEventArgs e)
         {
+            Bansos1 Bansos = new Bansos1();
             this.Close();
+            Bansos.Show();
         }
 
         private void imgPengaturan_Click(object sender, MouseButtonEventArgs e)
@@ -50,6 +53,11 @@ namespace BansosKu.Page.Home
         private void imgRiwayat_Click(object sender, MouseButtonEventArgs e)
         {
             this.Close();
+        }
+
+        private void ListViewItem_Selected(object sender, RoutedEventArgs e)
+        {
+
         }
         //private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
         //{

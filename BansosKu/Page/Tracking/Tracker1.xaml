@@ -22,7 +22,7 @@
                 <ColumnDefinition Width="auto" MinWidth="15"/>
 
             </Grid.ColumnDefinitions>
-            <Button Width="53" BorderThickness="0"
+            <Button Click="back_Click" Width="53" BorderThickness="0"
                     HorizontalAlignment="Left" Margin="5,0,0,0" Grid.ColumnSpan="3">
                 <Button.Background>
                     <ImageBrush ImageSource="\Resources\Images\arrowBlack.png"/>

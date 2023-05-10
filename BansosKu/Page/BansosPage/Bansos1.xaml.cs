@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using APILibrary.API;
 using APILibrary.Model;
+using BansosKu.Page.Home;
+using BansosKu.Page.Tracking;
 
 namespace BansosKu.Page.BansosPage
 {
@@ -34,6 +36,20 @@ namespace BansosKu.Page.BansosPage
         private void GroupBy_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
         {
 
+        }
+
+        private void Image_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            HomePage home = new HomePage();
+            this.Close();
+            home.Show();
+        }
+
+        private void Path_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Tracker track = new Tracker();
+            this.Close();
+            track.Show();
         }
     }
 }

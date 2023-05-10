@@ -17,6 +17,7 @@ using static System.Net.Mime.MediaTypeNames;
 using APILibrary.API;
 using APILibrary.Model;
 using System.Text.RegularExpressions;
+using BansosKu.Page.Home;
 
 namespace BansosKu.Page.Tracking
 {
@@ -39,5 +40,12 @@ namespace BansosKu.Page.Tracking
         {
 
         }
+
+        private void back_Click(object sender, RoutedEventArgs e)
+        {
+            HomePage home = new HomePage();
+            this.Close();
+            home.Show();
         }
+    }
     }

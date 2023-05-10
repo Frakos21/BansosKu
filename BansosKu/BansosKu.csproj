@@ -19,18 +19,25 @@
     <None Remove="Resources\Images\ellypsis.png" />
     <None Remove="Resources\Images\folder-add.png" />
     <None Remove="Resources\Images\Group.png" />
+    <None Remove="Resources\Images\Home.png" />
     <None Remove="Resources\Images\image-register.png" />
+    <None Remove="Resources\Images\Keluar.png" />
     <None Remove="Resources\Images\kontak.png" />
     <None Remove="Resources\Images\kunci.png" />
+    <None Remove="Resources\Images\Line 1.png" />
+    <None Remove="Resources\Images\location.png" />
     <None Remove="Resources\Images\padlock 1.png" />
+    <None Remove="Resources\Images\Pengaturan.png" />
     <None Remove="Resources\Images\PKH.png" />
     <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\right.png" />
     <None Remove="Resources\Images\Riwayat.png" />
     <None Remove="Resources\Images\Sidebar.png" />
     <None Remove="Resources\Images\Status Permintaan.png" />
     <None Remove="Resources\Images\TiketKu.png" />
     <None Remove="Resources\Images\user2.png" />
     <None Remove="Resources\Images\Vector.png" />
+    <None Remove="Resources\Images\Wait.png" />
     <None Remove="Roboto-Bold.ttf" />
     <None Remove="Roboto-Regular.ttf" />
   </ItemGroup>
@@ -66,12 +73,18 @@
     <Resource Include="Resources\Images\ellypsis.png" />
     <Resource Include="Resources\Images\folder-add.png" />
     <Resource Include="Resources\Images\Group.png" />
+    <Resource Include="Resources\Images\Home.png" />
     <Resource Include="Resources\Images\image-login.png" />
     <Resource Include="Resources\Images\image-register.png" />
+    <Resource Include="Resources\Images\Keluar.png" />
     <Resource Include="Resources\Images\kontak.png" />
     <Resource Include="Resources\Images\kunci.png" />
+    <Resource Include="Resources\Images\Line 1.png" />
+    <Resource Include="Resources\Images\location.png" />
     <Resource Include="Resources\Images\logo.png" />
     <Resource Include="Resources\Images\map.png" />
+    <Resource Include="Resources\Images\Pengaturan.png" />
+    <Resource Include="Resources\Images\right.png" />
     <Resource Include="Resources\Images\SidebarPutih.png" />
     <Resource Include="Resources\Images\padlock 1.png" />
     <Resource Include="Resources\Images\PKH.png" />
@@ -84,6 +97,7 @@
     <Resource Include="Resources\Images\Vector.png" />
     <Resource Include="Resources\Font\Roboto-Bold.ttf" />
     <Resource Include="Resources\Font\Roboto-Regular.ttf" />
+    <Resource Include="Resources\Images\Wait.png" />
   </ItemGroup>
 
   <ItemGroup>

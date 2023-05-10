@@ -81,7 +81,7 @@
                     Margin="0,-10,30,0"/>
             <Label Content="BansosKu" VerticalAlignment="Top" Style="{StaticResource CustomFont}" FontSize="18px" FontWeight="Bold" 
                    Foreground="#ffffff" Grid.Row="0" Margin="60,-7,0,0"/>
-            <Image Margin="30,0,0,20" Source="/Resources/Images/Vector.png" Grid.Row="0" Width="18" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Image Margin="30,0,0,20" Source="/Resources/Images/Vector.png" MouseLeftButtonUp="Image_MouseLeftButtonUp" Grid.Row="0" Width="18" HorizontalAlignment="Left" VerticalAlignment="Top"/>
             <Rectangle HorizontalAlignment="Center" Height="35" 
                        VerticalAlignment="Top" Width="311" Fill="WhiteSmoke" 
                        RadiusX="13" RadiusY="13" Grid.Row="1"/>
@@ -107,7 +107,7 @@
             </Grid.ColumnDefinitions>
             <Rectangle Width="350" Height="500" HorizontalAlignment="Left"
                        VerticalAlignment="Top" Fill="#FFFFFF" RadiusX="30" RadiusY="30"
-                       Margin="-7,15,1,0" Grid.RowSpan="8" Grid.ColumnSpan="3"/>
+                       Margin="0,15,0,0" Grid.RowSpan="6" Grid.ColumnSpan="3"/>
             <Label Content="BansosKu" HorizontalAlignment="Left" Grid.Row="0" 
                 Style="{StaticResource CustomFont}" Margin="17,38,0,0"
                 FontWeight="Bold" VerticalAlignment="Top" 
@@ -128,13 +128,13 @@
                 </Line.RenderTransform>
             </Line>
             <Ellipse Fill="White" Stroke="#E3E3E3" Grid.Row="1" StrokeThickness="0.9" Margin="40,10,40,10" />
-            <Image Margin="0,14,0,0" Grid.Row="1" Source="/Resources/Images/TiketKu.png" Stretch="Fill" HorizontalAlignment="Center" Width="19" Height="22" VerticalAlignment="Top"/>
+            <Image Margin="0,14,0,0" MouseLeftButtonUp="Path_MouseLeftButtonUp" Grid.Row="1" Source="/Resources/Images/TiketKu.png" Stretch="Fill" HorizontalAlignment="Center" Width="19" Height="22" VerticalAlignment="Top"/>
             <Label Content="TiketKu" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Left" Margin="10,15,0,0" 
                 Style="{StaticResource CustomFont}" 
                 FontWeight="Normal" VerticalAlignment="Top"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
             <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
-                  Grid.Row="1" Grid.Column="2" Margin="25,9,0,0" HorizontalAlignment="Left">
+                  Grid.Row="1" Grid.Column="2" Margin="25,9,0,0" HorizontalAlignment="Left" MouseLeftButtonUp="Path_MouseLeftButtonUp">
                 <Path.Data>
                     <PathGeometry>
                         <PathFigure StartPoint="0,0">
@@ -206,7 +206,7 @@
                 </Path.Data>
             </Path>
 
-            
+
 
 
             <Label Content="Info Bansos" HorizontalAlignment="Left" Grid.Row="5"
@@ -252,21 +252,21 @@
                                 <Label Grid.Row="0" Grid.Column="1" VerticalAlignment="Bottom" Margin="10,0,0,0"  Content="{Binding Nama}" FontSize="14" FontWeight="Bold" Width="250"/>
                                 <Label Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Content="{Binding Tanggal}" FontSize="10" Margin="10,0,0,0" FontWeight="Bold" />
                                 <Button Content="Daftar" Foreground="White" Grid.Column="1" Grid.RowSpan="2" Background="#645CAA" Width="68" Height="50" Margin="110,5,0,0"/>
-                                
-                                
-                                
-                   
+
+
+
+
                             </Grid>
                         </WrapPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
 
-            
-            
-            
-            
-        
+
+
+
+
+
 
 
 

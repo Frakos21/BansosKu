@@ -8,8 +8,8 @@
         Title="Tracker" Height="620" Width="350">
     <Grid>
         <Image Grid.Row="0" Source="\Resources\Images\map.png" Margin="-4,0,-4,0"/>
-        <Button Click =" back_Click" Height="20" Width="20" Grid.Row="0" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="5,10,282,534">
+        <Button Click ="back_Click" Height="40" Width="40" Grid.Row="0" BorderThickness="1"
+                    HorizontalAlignment="Left" Margin="20,10,282,534">
             <Button.Background>
                 <ImageBrush ImageSource="\Resources\Images\arrowBlack.png"/>
             </Button.Background>
@@ -17,12 +17,12 @@
         </Button>
 
         <Rectangle HorizontalAlignment="Center" Height="137" Margin="0,478,0,0"  VerticalAlignment="Top" Width="350" Fill="white" RadiusX="12" RadiusY="12" MouseDown="Rectangle_MouseDown"/>
-        <Rectangle HorizontalAlignment="Center" Height="8" Margin="0,486,0,0"  VerticalAlignment="Top" Width="60" Fill="#645CAA" RadiusX="4" RadiusY="4"/>
+        <Rectangle HorizontalAlignment="Center" Height="8" Margin="0,486,0,0"  VerticalAlignment="Top" Width="60" Fill="#645CAA" RadiusX="4" RadiusY="4" MouseLeftButtonUp="Rectangle_MouseLeftButtonUp"/>
 
         <Rectangle HorizontalAlignment="Center" Height="35" Margin="0,529,0,0" VerticalAlignment="Top" 
                    Width="310"  Fill="White" RadiusX="13" RadiusY="13" Stroke="#E3E3E3"/>
         <Label Content="Cari Tempat Bansos" HorizontalAlignment="Left" Margin="48,534,0,0" VerticalAlignment="Top"
                Foreground="#645CAA" Style="{StaticResource CustomFont}" FontWeight="Bold" RenderTransformOrigin="0.708,7.174"/>
-        <Image Margin="29,539,289,31" Source="/Resources/Images/cari.png" Stretch="Fill" RenderTransformOrigin="0.31,0.145"/>
+        <Image Margin="20,520,289,31" Width="10" Height="10" Source="/Resources/Images/cari.png" Stretch="Fill" RenderTransformOrigin="0.31,0.145"/>
     </Grid>
 </Window>
