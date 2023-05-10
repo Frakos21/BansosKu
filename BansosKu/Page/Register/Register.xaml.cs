@@ -14,6 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Diagnostics.Contracts;
+using System.Diagnostics;
 
 namespace BansosKu.Page.Register
 {
@@ -38,16 +40,32 @@ namespace BansosKu.Page.Register
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
+            Contract.Requires(TBNIK.Text != "");
+            Contract.Requires(TBNama.Text != "");
+            Contract.Requires(TBPassword != null);
+            Contract.Requires(TBComfirm != null);
+            Contract.Requires(!string.IsNullOrEmpty(TBPassword.Password));
+            Contract.Requires(!string.IsNullOrEmpty(TBComfirm.Password));
+
             var pw = new System.Net.NetworkCredential(string.Empty, TBPassword.SecurePassword).Password;
             var pwc = new System.Net.NetworkCredential(string.Empty, TBComfirm.SecurePassword).Password;
 
-            if (!pw.Equals(pwc))
+            Debug.Assert(TBNIK.Text != "", "Password should not be null");
+            Debug.Assert(TBNama.Text != "", "Nama harus diisi");
+            Debug.Assert(pw != null, "Password should not be null");
+            Debug.Assert(pwc != null, "Confirm password should not be null");
+            Debug.Assert(!pw.Equals(pwc), "Password tidak sama dengan Confirm Password");
+
+            if (!pw.Equals(pwc) && pw!= null && pw != null)
             {
                 MessageBox.Show("Password tidak sama dengan Confirm Password, silahkan di periksa");
+            }else if(TBNIK.Text == "" || TBNama.Text == "")
+            {
+                MessageBox.Show("Semua harus diisi, silahkan diperiksa");
             }
             else
             {
-                var res = _api.RegisterUser(TBNIK.Text,TBNama.Text,pw);
+                var res = _api.RegisterUser(TBNIK.Text, TBNama.Text, pw);
                 if (res == -2)
                 {
                     MessageBox.Show("Registrasi Gagal, NIK Sudah Terdaftar");
@@ -63,8 +81,8 @@ namespace BansosKu.Page.Register
                     main.Show();
                 }
             }
-          
         }
+
 
         private void TBNIK_GotFocus(object sender, RoutedEventArgs e)
         {

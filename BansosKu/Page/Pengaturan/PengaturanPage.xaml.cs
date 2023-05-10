@@ -4,6 +4,7 @@ using BansosKu.Page.Data_Page;
 using BansosKu.Page.Home;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -33,14 +34,25 @@ namespace BansosKu.Page.Pengaturan
 
         private void getDataUser()
         {
-            myUser =  _api.getUserById(AppSettings.Default.id);
-            if(myUser.Id == null)
+            Contract.Requires(AppSettings.Default.id > 0, "ID user harus valid");
+
+            try
             {
-                lblNama.Content = "-";
+                myUser = _api.getUserById(AppSettings.Default.id);
+                Contract.Assert(myUser != null, "Gagal mendapatkan data user");
+
+                if (myUser.Id == null)
+                {
+                    lblNama.Content = "-";
+                }
+                else
+                {
+                    lblNama.Content = myUser.Fullname.ToUpper();
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblNama.Content = myUser.Fullname.ToUpper();
+                MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
         }
 

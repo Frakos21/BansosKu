@@ -5,6 +5,8 @@ using BansosKu.Page.Pengaturan;
 using BansosKu.Page.Register;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
+using System.Diagnostics;
 using System.Linq;
 using System.Security;
 using System.Text;
@@ -42,31 +44,47 @@ namespace BansosKu
 
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                Debug.Assert(tbNik.Text != "", "tbNik is null");
+                Debug.Assert(tbPassword != null, "tbPassword is null");
+                Contract.Requires(!string.IsNullOrEmpty(tbPassword.Password));
+                Contract.Requires(!tbNik.Text.Equals(""), "NIK harus diisi!!");
 
-            var pw = new System.Net.NetworkCredential(string.Empty, tbPassword.SecurePassword).Password;
-            if (tbNik.Text.Equals(""))
-            {
-                MessageBox.Show("NIK harus diisi!!");
-            }else if (pw.Equals("")){
-                MessageBox.Show("Password harus diisi!!");
-            }
-            else
-            {
-                var res = _api.Login(tbNik.Text,pw);
-                if(res == -1)
+                var pw = new System.Net.NetworkCredential(string.Empty, tbPassword.SecurePassword).Password;
+                Debug.Assert(pw != null, "Password should not be null");
+                Debug.Assert(_api != null, "_api is null");
+                if (tbNik.Text.Equals(""))
                 {
-                    MessageBox.Show("Login Gagal");
+                    MessageBox.Show("NIK harus diisi!!");
+                }
+                else if (pw.Equals(""))
+                {
+                    MessageBox.Show("Password harus diisi!!");
                 }
                 else
                 {
-                    AppSettings.Default.id = res;
-                    AppSettings.Default.Save();
-                    MessageBox.Show("Login Berhasil");
-                    this.Close();
-                    home.Show();
+                    var res = _api.Login(tbNik.Text, pw);
+                    if (res == -1)
+                    {
+                        MessageBox.Show("Login Gagal");
+                    }
+                    else
+                    {
+                        AppSettings.Default.id = res;
+                        AppSettings.Default.Save();
+                        MessageBox.Show("Login Berhasil");
+                        this.Close();
+                        home.Show();
+                    }
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Login Gagal");
+            }
         }
+
     }
 
 }
