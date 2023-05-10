@@ -28,7 +28,7 @@ namespace BansosKu.Page.BansosPage
         public Bansos1()
         {
             InitializeComponent();
-            List<BansosModel> listItems = _api.GetAllBansos();     
+            List<BansosModel> listItems = _api.GetAllBansos<BansosModel>();     
             GroupBy.ItemsSource = listItems;
 
         }

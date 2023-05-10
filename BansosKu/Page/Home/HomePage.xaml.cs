@@ -1,67 +1,86 @@
 ﻿using BansosKu.Page.BansosPage;
 using BansosKu.Page.Pengaturan;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using System.Windows;
 
 namespace BansosKu.Page.Home
 {
-    /// <summary>
-    /// Interaction logic for Home.xaml
-    /// </summary>
+    public enum HomePageState
+    {
+        Default,
+        Bansos,
+        Pengaturan,
+        Keluar
+    }
+
     public partial class HomePage : Window
     {
+        private HomePageState currentState;
+
         public HomePage()
         {
             InitializeComponent();
+            currentState = HomePageState.Default;
+        }
+
+        private void ChangeState(HomePageState newState)
+        {
+            currentState = newState;
+            // Lakukan perubahan UI atau tindakan lain berdasarkan state baru
+            switch (currentState)
+            {
+                case HomePageState.Default:
+                    // Tampilkan halaman default
+                    break;
+                case HomePageState.Bansos:
+                    Bansos1 bansosPage = new Bansos1();
+                    this.Close();
+                    bansosPage.Show();
+                    break;
+                case HomePageState.Pengaturan:
+                    PengaturanPage pengaturanPage = new PengaturanPage();
+                    this.Close();
+                    pengaturanPage.Show();
+                    break;
+                case HomePageState.Keluar:
+                    AppSettings.Default.id = 0;
+                    MainWindow login = new MainWindow();
+                    login.Show();
+                    this.Close();
+                    break;
+                default:
+                    break;
+            }
         }
 
         private void imgHome_Click(object sender, MouseButtonEventArgs e)
         {
+            ChangeState(HomePageState.Default);
         }
 
         private void imgBansosKu_Click(object sender, MouseButtonEventArgs e)
         {
-            Bansos1 Bansos = new Bansos1();
-            this.Close();
-            Bansos.Show();
+            ChangeState(HomePageState.Bansos);
         }
 
         private void imgPengaturan_Click(object sender, MouseButtonEventArgs e)
         {
-            PengaturanPage set = new PengaturanPage();
-            this.Close();
-            set.Show();
+            ChangeState(HomePageState.Pengaturan);
         }
 
         private void imgKeluar_Click(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            ChangeState(HomePageState.Keluar);
         }
 
         private void imgRiwayat_Click(object sender, MouseButtonEventArgs e)
         {
-            this.Close();
+            // Tidak ada perubahan state untuk aksi ini
         }
 
         private void ListViewItem_Selected(object sender, RoutedEventArgs e)
         {
-
+            // Tidak ada perubahan state untuk aksi ini
         }
-        //private void Image_MouseRightButtonDown(object sender, MouseButtonEventArgs e)
-        //{
-        //    Sidebar side = new Sidebar();
-        //}
     }
 }

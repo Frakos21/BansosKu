@@ -99,9 +99,9 @@ namespace APILibrary.API
             return -1;
 
         }
-        public List<BansosModel> GetAllBansos()
+        public List<T> GetAllBansos<T>()
         {
-            List<BansosModel> res = new List<BansosModel>();
+            List<T> res = new List<T>();
             try
             {
                 var client = new RestClient(baseurl);
@@ -111,7 +111,7 @@ namespace APILibrary.API
 
                 if (response.StatusCode.ToString() == "OK")
                 {
-                    res = JsonConvert.DeserializeObject<List<BansosModel>>(response.Content);
+                    res = JsonConvert.DeserializeObject<List<T>>(response.Content);
 
                     return res;
                 }
@@ -123,9 +123,9 @@ namespace APILibrary.API
 
             return res;
         }
-        public List<TrxBansosModel> GetAllBansosUser(int id)
+        public List<T> GetAllBansosUser<T>(int id)
         {
-            List<TrxBansosModel> res = new List<TrxBansosModel>();
+            List<T> res = new List<T>();
             try
             {
                 var client = new RestClient(baseurl);
@@ -135,7 +135,7 @@ namespace APILibrary.API
 
                 if (response.StatusCode.ToString() == "OK")
                 {
-                    res = JsonConvert.DeserializeObject<List<TrxBansosModel>>(response.Content);
+                    res = JsonConvert.DeserializeObject<List<T>>(response.Content);
 
                     return res;
                 }

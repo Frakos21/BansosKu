@@ -47,12 +47,12 @@ namespace BansosKu.Page.Data_Page
 
         private void BtnKirim_Click(object sender, RoutedEventArgs e)
         {
-            Debug.Assert(tbNik.Text !="-", "NIK harus diisi");
-            Debug.Assert(tbNama.Text != "-", "Nama harus diisi");
-            Debug.Assert(tbAlamat.Text != "-", "Alamat harus diisi");
-            Debug.Assert(tbKTP.Text != "-", "Foto KTP harus diisi");
-            Debug.Assert(tbRumah.Text != "-", "Foto Rumah harus diisi");
-            Debug.Assert(tbPendapatan.Text != "-", "Pendapatan harus diisi");
+            Debug.Assert(tbNik.Text !="", "NIK harus diisi");
+            Debug.Assert(tbNama.Text != "", "Nama harus diisi");
+            Debug.Assert(tbAlamat.Text != "", "Alamat harus diisi");
+            Debug.Assert(tbKTP.Text != "", "Foto KTP harus diisi");
+            Debug.Assert(tbRumah.Text != "", "Foto Rumah harus diisi");
+            Debug.Assert(tbPendapatan.Text != "", "Pendapatan harus diisi");
             try
             {
                 if (tbNama.Text.Equals("-") || tbNik.Text.Equals("-") || tbAlamat.Text.Equals("-") || tbPendapatan.Text.Equals("-") || tbKTP.Text.Equals("-")|| tbRumah.Text.Equals("-"))
