@@ -23,5 +23,17 @@ namespace BansosKu.Page.Tracking
         {
             InitializeComponent();
         }
+        private void Rectangle_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            Tracker1 home = new Tracker1();
+            this.Close();
+            home.Show();
+        }
+        private void back_Click (object sender, RoutedEventArgs e)
+        {
+            Tracker1 home = new Tracker1();
+            this.Close();
+            home.Show();
+        }
     }
 }

@@ -8,8 +8,15 @@
         Title="Tracker" Height="620" Width="350">
     <Grid>
         <Image Grid.Row="0" Source="\Resources\Images\map.png" Margin="-4,0,-4,0"/>
-        <Image Grid.Row="0" Source="\Resources\Images\sidebarPutih.png" Margin="5,10,282,534"/>
-        <Rectangle HorizontalAlignment="Center" Height="137" Margin="0,478,0,0"  VerticalAlignment="Top" Width="350" Fill="white" RadiusX="12" RadiusY="12"/>
+        <Button Click =" back_Click" Height="20" Width="20" Grid.Row="0" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="5,10,282,534">
+            <Button.Background>
+                <ImageBrush ImageSource="\Resources\Images\arrowBlack.png"/>
+            </Button.Background>
+
+        </Button>
+
+        <Rectangle HorizontalAlignment="Center" Height="137" Margin="0,478,0,0"  VerticalAlignment="Top" Width="350" Fill="white" RadiusX="12" RadiusY="12" MouseDown="Rectangle_MouseDown"/>
         <Rectangle HorizontalAlignment="Center" Height="8" Margin="0,486,0,0"  VerticalAlignment="Top" Width="60" Fill="#645CAA" RadiusX="4" RadiusY="4"/>
 
         <Rectangle HorizontalAlignment="Center" Height="35" Margin="0,529,0,0" VerticalAlignment="Top" 

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,6 +13,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using static System.Net.Mime.MediaTypeNames;
+using APILibrary.API;
+using APILibrary.Model;
+using System.Text.RegularExpressions;
 
 namespace BansosKu.Page.Tracking
 {
@@ -19,9 +25,19 @@ namespace BansosKu.Page.Tracking
     /// </summary>
     public partial class Tracker1 : Window
     {
+        private MyAPI _api = new MyAPI();
+
         public Tracker1()
         {
             InitializeComponent();
+            List<BansosModel> listItems = _api.GetAllBansos();
+            lvBansos.ItemsSource = listItems;
+
+        }
+
+        private void lvBansos_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
+        {
+
+        }
         }
     }
-}
