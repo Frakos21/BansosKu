@@ -30,8 +30,9 @@ namespace BansosKu.Page.Tracking
 
         public Tracker1()
         {
+            AppSettings.Default.id = 1;
             InitializeComponent();
-            List<BansosModel> listItems = _api.GetAllBansos();
+            List<TrxBansosModel> listItems = _api.GetAllBansosUser(AppSettings.Default.id);
             lvBansos.ItemsSource = listItems;
 
         }

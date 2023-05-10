@@ -123,5 +123,30 @@ namespace APILibrary.API
 
             return res;
         }
+        public List<TrxBansosModel> GetAllBansosUser(int id)
+        {
+            List<TrxBansosModel> res = new List<TrxBansosModel>();
+            try
+            {
+                var client = new RestClient(baseurl);
+                var request = new RestRequest("Bansos/GetBansosUser/"+id, Method.Get);
+                request.AddHeader("Content-Type", "application/json");
+                var response = client.Execute(request);
+
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    res = JsonConvert.DeserializeObject<List<TrxBansosModel>>(response.Content);
+
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return res;
+            }
+
+            return res;
+        }
     }
 }
