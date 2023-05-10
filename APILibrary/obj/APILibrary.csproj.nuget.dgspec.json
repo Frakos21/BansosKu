@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Kuliah\\SEMESTER 4\\KPL\\BansosKu\\APILibrary\\APILibrary.csproj": {}
+    "C:\\BansosKu\\APILibrary\\APILibrary.csproj": {}
   },
   "projects": {
-    "D:\\Kuliah\\SEMESTER 4\\KPL\\BansosKu\\APILibrary\\APILibrary.csproj": {
+    "C:\\BansosKu\\APILibrary\\APILibrary.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Kuliah\\SEMESTER 4\\KPL\\BansosKu\\APILibrary\\APILibrary.csproj",
+        "projectUniqueName": "C:\\BansosKu\\APILibrary\\APILibrary.csproj",
         "projectName": "APILibrary",
-        "projectPath": "D:\\Kuliah\\SEMESTER 4\\KPL\\BansosKu\\APILibrary\\APILibrary.csproj",
-        "packagesPath": "C:\\Users\\deder\\.nuget\\packages\\",
-        "outputPath": "D:\\Kuliah\\SEMESTER 4\\KPL\\BansosKu\\APILibrary\\obj\\",
+        "projectPath": "C:\\BansosKu\\APILibrary\\APILibrary.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\BansosKu\\APILibrary\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\deder\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

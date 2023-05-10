@@ -3,6 +3,7 @@ using BansosKu.Model;
 using BansosKu.Page.Home;
 using BansosKu.Page.Pengaturan;
 using BansosKu.Page.Register;
+using BansosKu.Page.Tracking;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;

@@ -99,5 +99,30 @@ namespace APILibrary.API
             return -1;
 
         }
+        public List<BansosModel> GetAllBansos()
+        {
+            List<BansosModel> res = new List<BansosModel>();
+            try
+            {
+                var client = new RestClient(baseurl);
+                var request = new RestRequest("Bansos/GetBansos", Method.Get);
+                request.AddHeader("Content-Type", "application/json");
+                var response = client.Execute(request);
+
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    res = JsonConvert.DeserializeObject<List<BansosModel>>(response.Content);
+
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+
+                return res;
+            }
+
+            return res;
+        }
     }
 }

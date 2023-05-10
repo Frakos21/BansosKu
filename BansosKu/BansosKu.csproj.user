@@ -16,6 +16,9 @@
     <Compile Update="Page\Register\Register.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Page\Tracking\Tracker1.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
@@ -28,6 +31,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Page\Register\Register.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Page\Tracking\Tracker1.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
