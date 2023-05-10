@@ -38,13 +38,16 @@ namespace BansosKu.Page.Register
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            if (!TBPassword.Text.Equals(TBComfirm.Text))
+            var pw = new System.Net.NetworkCredential(string.Empty, TBPassword.SecurePassword).Password;
+            var pwc = new System.Net.NetworkCredential(string.Empty, TBComfirm.SecurePassword).Password;
+
+            if (!pw.Equals(pwc))
             {
                 MessageBox.Show("Password tidak sama dengan Confirm Password, silahkan di periksa");
             }
             else
             {
-                var res = _api.RegisterUser(TBNIK.Text,TBNama.Text,TBPassword.Text);
+                var res = _api.RegisterUser(TBNIK.Text,TBNama.Text,pw);
                 if (res == -2)
                 {
                     MessageBox.Show("Registrasi Gagal, NIK Sudah Terdaftar");
@@ -63,6 +66,55 @@ namespace BansosKu.Page.Register
           
         }
 
-       
+        private void TBNIK_GotFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && textBox.Text == "Masukan NIK")
+            {
+                textBox.Text = "";
+                textBox.Foreground = Brushes.Black;
+            }
+
+        }
+
+        private void TBNIK_LostFocus(object sender, RoutedEventArgs e)
+        {
+            TextBox textBox = sender as TextBox;
+            if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
+            {
+                textBox.Text = "Masukan NIK";
+                textBox.Foreground = Brushes.LightGray;
+            }
+        }
+
+        private void TBNama_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBNama_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBPassword_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBPassword_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBComfirm_GotFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TBComfirm_LostFocus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

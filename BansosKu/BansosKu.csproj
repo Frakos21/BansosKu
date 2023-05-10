@@ -10,6 +10,7 @@
   <ItemGroup>
     <None Remove="Resources\Images\arrowBlack.png" />
     <None Remove="Resources\Images\Avatar.png" />
+    <None Remove="Resources\Images\Bansosku.png" />
     <None Remove="Resources\Images\c.png" />
     <None Remove="Resources\Images\cari.png" />
     <None Remove="Resources\Images\checklist.png" />
@@ -17,12 +18,16 @@
     <None Remove="Resources\Images\ellypsis.png" />
     <None Remove="Resources\Images\folder-add.png" />
     <None Remove="Resources\Images\Group.png" />
+    <None Remove="Resources\Images\Home.png" />
     <None Remove="Resources\Images\image-register.png" />
+    <None Remove="Resources\Images\Keluar.png" />
     <None Remove="Resources\Images\kontak.png" />
     <None Remove="Resources\Images\kunci.png" />
     <None Remove="Resources\Images\location.png" />
     <None Remove="Resources\Images\padlock 1.png" />
+    <None Remove="Resources\Images\Pengaturan.png" />
     <None Remove="Resources\Images\profile.png" />
+    <None Remove="Resources\Images\Riwayat.png" />
     <None Remove="Resources\Images\Sidebar.png" />
     <None Remove="Resources\Images\SidebarPutih.png" />
     <None Remove="Resources\Images\user2.png" />
@@ -45,6 +50,7 @@
   <ItemGroup>
     <Resource Include="Resources\Images\arrowBlack.png" />
     <Resource Include="Resources\Images\Avatar.png" />
+    <Resource Include="Resources\Images\Bansosku.png" />
     <Resource Include="Resources\Images\c.png" />
     <Resource Include="Resources\Images\cari.png" />
     <Resource Include="Resources\Images\checklist.png" />
@@ -52,8 +58,10 @@
     <Resource Include="Resources\Images\ellypsis.png" />
     <Resource Include="Resources\Images\folder-add.png" />
     <Resource Include="Resources\Images\Group.png" />
+    <Resource Include="Resources\Images\Home.png" />
     <Resource Include="Resources\Images\image-login.png" />
     <Resource Include="Resources\Images\image-register.png" />
+    <Resource Include="Resources\Images\Keluar.png" />
     <Resource Include="Resources\Images\kontak.png" />
     <Resource Include="Resources\Images\kunci.png" />
     <Resource Include="Resources\Images\location.png" />
@@ -61,12 +69,29 @@
     <Resource Include="Resources\Images\map.png" />
     <Resource Include="Resources\Images\SidebarPutih.png" />
     <Resource Include="Resources\Images\padlock 1.png" />
+    <Resource Include="Resources\Images\Pengaturan.png" />
     <Resource Include="Resources\Images\profile.png" />
+    <Resource Include="Resources\Images\Riwayat.png" />
     <Resource Include="Resources\Images\Sidebar.png" />
     <Resource Include="Resources\Images\user2.png" />
     <Resource Include="Resources\Images\Vector.png" />
     <Resource Include="Resources\Font\Roboto-Bold.ttf" />
     <Resource Include="Resources\Font\Roboto-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="AppSettings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppSettings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="AppSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>AppSettings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>

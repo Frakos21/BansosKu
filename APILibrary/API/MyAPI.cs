@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace APILibrary.API
 {
@@ -41,18 +42,40 @@ namespace APILibrary.API
             }
         }
 
-        public bool Login(string nik, string password) {
+        public int Login(string nik, string password) {
             var client = new RestClient(baseurl);
             var request = new RestRequest("Auth/Authentication/"+nik+"/"+password, Method.Get);
             request.AddHeader("Content-Type", "application/json");
             var response = client.Execute(request);
             var responseContent = JsonConvert.DeserializeObject<String>(response.Content);
-
-            if (responseContent == "false")
+            if (Convert.ToInt32(responseContent) == -1)
             {
-                return false;
+                return -1;
             }
-            return true;
+            return Convert.ToInt32(responseContent);
+        }
+
+        public UserModel getUserById(int id)
+        {
+            UserModel res = new UserModel();
+            try
+            {
+                var client = new RestClient(baseurl);
+                var request = new RestRequest("Auth/GetUserById/"+id, Method.Get);
+                request.AddHeader("Content-Type", "application/json");
+                var response = client.Execute(request);
+                if (response.StatusCode.ToString() == "OK")
+                {
+                    res = JsonConvert.DeserializeObject<UserModel>(response.Content.ToString());
+                    return res;
+                }
+            }
+            catch (Exception ex)
+            {
+                return res;
+            }
+            return res;
+
         }
         public List<BansosModel> GetAllBansos()
         {

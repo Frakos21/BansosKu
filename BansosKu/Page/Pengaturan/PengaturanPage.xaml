@@ -1,4 +1,4 @@
-﻿<Window x:Class="BansosKu.Page.Pengaturan.Pengaturan"
+﻿<Window x:Class="BansosKu.Page.Pengaturan.PengaturanPage"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -50,14 +50,10 @@
                     Stretch="Fill" Grid.Row="0" Width="60" Height="60"
                     HorizontalAlignment="Left" Grid.Column="0" 
                     Margin="25,12,0,0"/>
-            <Label Content="Ngatemin" HorizontalAlignment="Right"  Grid.Row="0" 
+            <Label x:Name="lblNama" Content="Ngatemin" HorizontalAlignment="Right"  Grid.Row="0" 
                 Style="{StaticResource CustomFont}"  Grid.Column="1"
-                FontWeight="Bold" VerticalAlignment="Center" 
-                FontSize="14px" Margin="0,0,12,0"/>
-            <Label Content="Sangkarah" HorizontalAlignment="Right" Grid.Row="0" 
-                Style="{StaticResource CustomFont}"  Grid.Column="1"
-                FontWeight="Normal" VerticalAlignment="Center" 
-                FontSize="10px" Margin="0,27,19,0"/>
+                FontWeight="Bold" VerticalAlignment="Top" 
+                FontSize="14px" Margin="0,49,12,0"/>
             <Path Stroke="Black" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
                   Grid.Row="0" Grid.Column="2" Margin="25,9,0,0" HorizontalAlignment="Left">
                 <Path.Data>
@@ -96,36 +92,27 @@
                 Style="{StaticResource CustomFont}" Grid.Row="2" Grid.Column="1"
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,0"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
-                  Grid.Row="2" Grid.Column="2" Margin="25,0,0,0" HorizontalAlignment="Left">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathFigure StartPoint="0,0">
-                            <LineSegment Point="40,10" />
-                            <LineSegment Point="0,20" />
-                        </PathFigure>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
+            <Button Height="20" Width="20" Grid.Row="2" Grid.Column="3" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="20,0,0,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
+                </Button.Background>
+            </Button>
             <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
                      Grid.Row="3" Width="36" Margin="0,0,16,0" HorizontalAlignment="Right" Height="34" VerticalAlignment="Top" />
             <Image Source="/Resources/Images/folder-add.png" Stretch="Fill"
-                   Grid.Row="3" Margin="0,6,24,0" HorizontalAlignment="Right" Width="20" Height="18" VerticalAlignment="Top"/>
+                   Grid.Row="3" Margin="0,6,24,0" HorizontalAlignment="Right" 
+                   Width="20" Height="18" VerticalAlignment="Top" />
             <Label Content="Data" HorizontalAlignment="Center"
                 Style="{StaticResource CustomFont}" Grid.Row="3" Grid.Column="1"
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,8"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
-                  Grid.Row="3" Grid.Column="2" Margin="25,0,0,9" HorizontalAlignment="Left">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathFigure StartPoint="0,0">
-                            <LineSegment Point="40,10" />
-                            <LineSegment Point="0,20" />
-                        </PathFigure>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
+            <Button Height="20" Width="20" Grid.Row="3" Grid.Column="3" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="20,0,0,9" Click="Button_Click">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
+                </Button.Background>
+            </Button>
             <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
                      Grid.Row="4" Width="36" Margin="0,8,16,0" HorizontalAlignment="Right" Height="34" VerticalAlignment="Top" />
             <Image Source="/Resources/Images/kunci.png" Stretch="Fill"
@@ -134,17 +121,12 @@
                 Style="{StaticResource CustomFont}" Grid.Row="4" Grid.Column="1"
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,10"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
-                  Grid.Row="4" Grid.Column="2" Margin="25,0,0,11" HorizontalAlignment="Left">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathFigure StartPoint="0,0">
-                            <LineSegment Point="40,10" />
-                            <LineSegment Point="0,20" />
-                        </PathFigure>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
+            <Button Height="20" Width="20" Grid.Row="4" Grid.Column="3" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="20,0,0,12">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
+                </Button.Background>
+            </Button>
             <Line X1="300" Y1="0" X2="15" Y2="0" Stroke="#E3E3E3" StrokeThickness="0.9" 
                   RenderTransformOrigin="0.5,0.5" Grid.Row="5" Grid.ColumnSpan="3" 
                   Margin="9,0,24,55" Width="350" VerticalAlignment="Center">
@@ -166,17 +148,12 @@
                 Style="{StaticResource CustomFont}" Grid.Row="5" Grid.Column="1"
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,5,0,0"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
-                  Grid.Row="5" Grid.Column="2" Margin="25,5,0,0" HorizontalAlignment="Left">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathFigure StartPoint="0,0">
-                            <LineSegment Point="40,10" />
-                            <LineSegment Point="0,20" />
-                        </PathFigure>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
+            <Button Height="20" Width="20" Grid.Row="5" Grid.Column="3" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="20,7,0,0">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
+                </Button.Background>
+            </Button>
             <Ellipse Fill="White" Stroke="#E3E3E3" StrokeThickness="1.5" 
                      Grid.Row="6" Margin="36,7,0,15" HorizontalAlignment="Left" Width="36" />
             <Image Source="/Resources/Images/kontak.png" Stretch="Fill"
@@ -185,17 +162,12 @@
                 Style="{StaticResource CustomFont}" Grid.Row="6" Grid.Column="1"
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,10"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
-            <Path Stroke="#645CAA" StrokeThickness="2" Width="8" Height="11" Stretch="Fill"
-                  Grid.Row="6" Grid.Column="2" Margin="25,0,0,10" HorizontalAlignment="Left">
-                <Path.Data>
-                    <PathGeometry>
-                        <PathFigure StartPoint="0,0">
-                            <LineSegment Point="40,10" />
-                            <LineSegment Point="0,20" />
-                        </PathFigure>
-                    </PathGeometry>
-                </Path.Data>
-            </Path>
+            <Button Height="20" Width="20" Grid.Row="6" Grid.Column="3" BorderThickness="0"
+                    HorizontalAlignment="Left" Margin="20,0,0,9">
+                <Button.Background>
+                    <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
+                </Button.Background>
+            </Button>
             <Image Grid.Row="7" Grid.Column="1" Source="/Resources/Images/c.png" 
                    Stretch="Fill" RenderTransformOrigin="-0.7,1.498" Margin="0,0,58,9"
                    Width="13" Height="13" VerticalAlignment="Bottom"/>

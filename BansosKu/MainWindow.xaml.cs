@@ -1,6 +1,7 @@
 ﻿using APILibrary.API;
 using BansosKu.Model;
 using BansosKu.Page.Home;
+using BansosKu.Page.Pengaturan;
 using BansosKu.Page.Register;
 using BansosKu.Page.Tracking;
 using System;
@@ -26,7 +27,7 @@ namespace BansosKu
     /// </summary>
     public partial class MainWindow : Window
     {
-     
+        HomePage home = new HomePage();
         private MyAPI _api = new MyAPI();
         public MainWindow()
         {
@@ -53,12 +54,14 @@ namespace BansosKu
             else
             {
                 var res = _api.Login(tbNik.Text,pw);
-                if(res == false)
+                if(res == -1)
                 {
                     MessageBox.Show("Login Gagal");
                 }
                 else
                 {
+                    AppSettings.Default.id = res;
+                    AppSettings.Default.Save();
                     MessageBox.Show("Login Berhasil");
                     Tracker home = new Tracker();
                     this.Close();
