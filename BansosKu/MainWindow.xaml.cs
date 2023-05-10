@@ -1,7 +1,6 @@
 ﻿using APILibrary.API;
 using BansosKu.Model;
 using BansosKu.Page.Home;
-using BansosKu.Page.Pengaturan;
 using BansosKu.Page.Register;
 using BansosKu.Page.Tracking;
 using System;
@@ -29,7 +28,7 @@ namespace BansosKu
     /// </summary>
     public partial class MainWindow : Window
     {
-        HomePage home = new HomePage();
+     
         private MyAPI _api = new MyAPI();
         public MainWindow()
         {
