@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using RestSharp;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -76,18 +77,23 @@ namespace APILibrary.API
             }
             return res;
         }
-        public int updateUser(UserModel user,int id)
+        public int updateUser(UserModel user, int id)
         {
+            Contract.Requires(user != null, "UserModel cannot be null");
+            Contract.Requires(id > 0, "ID user harus valid");
+
             try
             {
                 var client = new RestClient(baseurl);
-                var request = new RestRequest("Auth/UpdateUser/"+id, Method.Put);
+                var request = new RestRequest("Auth/UpdateUser/" + id, Method.Put);
                 request.AddHeader("Content-Type", "application/json");
                 var body = JsonConvert.SerializeObject(user);
                 request.AddParameter("application/json", body, ParameterType.RequestBody);
                 var response = client.Execute(request);
-                var responseContent = JsonConvert.DeserializeObject<String>(response.Content.ToString());
-                if(responseContent == "success")
+                var responseContent = JsonConvert.DeserializeObject<string>(response.Content.ToString());
+                Contract.Assert(responseContent == "success", "Update user failed");
+
+                if (responseContent == "success")
                 {
                     return 1;
                 }
@@ -96,9 +102,10 @@ namespace APILibrary.API
             {
                 return -1;
             }
-            return -1;
 
+            return -1;
         }
+
         public List<T> GetAllBansos<T>()
         {
             List<T> res = new List<T>();

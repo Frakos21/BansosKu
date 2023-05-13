@@ -40,6 +40,7 @@ namespace BansosKu.Page.Pengaturan
             {
                 myUser = _api.getUserById(AppSettings.Default.id);
                 Contract.Assert(myUser != null, "Gagal mendapatkan data user");
+                Contract.Ensures(myUser.Id != null || lblNama.Content.Equals("-"), "Nama harus ditampilkan");
 
                 if (myUser.Id == null)
                 {
@@ -55,6 +56,7 @@ namespace BansosKu.Page.Pengaturan
                 MessageBox.Show("Terjadi kesalahan: " + ex.Message);
             }
         }
+
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

@@ -55,7 +55,7 @@ namespace BansosKu.Page.Data_Page
             Debug.Assert(tbPendapatan.Text != "", "Pendapatan harus diisi");
             try
             {
-                if (tbNama.Text.Equals("-") || tbNik.Text.Equals("-") || tbAlamat.Text.Equals("-") || tbPendapatan.Text.Equals("-") || tbKTP.Text.Equals("-")|| tbRumah.Text.Equals("-"))
+                if (tbNama.Text.Equals("") || tbNik.Text.Equals("") || tbAlamat.Text.Equals("") || tbPendapatan.Text.Equals("") || tbKTP.Text.Equals("")|| tbRumah.Text.Equals(""))
                 {
                     MessageBox.Show("Mohon diisi semuanya");
                 }
