@@ -19,7 +19,7 @@
             <Label Content="Pengaturan" VerticalAlignment="Top" Style="{StaticResource CustomFont}" FontSize="18px" FontWeight="Bold" 
                    Foreground="#ffffff" Grid.Row="0" Margin="60,0,0,0"/>
             <Button Height="20" Width="20" Grid.Row="0" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="28,0,0,12" Click="Button_Click_1">
+                    HorizontalAlignment="Left" Margin="28,0,0,12" Click="Button_Click_Home">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Images/Vector.png"/>
                 </Button.Background>
@@ -94,7 +94,7 @@
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,0"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
             <Button Height="20" Width="20" Grid.Row="2" Grid.Column="3" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="20,0,0,0">
+                    HorizontalAlignment="Left" Margin="20,0,0,0" Click="Button_Click_Nama">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
                 </Button.Background>
@@ -109,7 +109,7 @@
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,8"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
             <Button Height="20" Width="20" Grid.Row="3" Grid.Column="3" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="20,0,0,9" Click="Button_Click">
+                    HorizontalAlignment="Left" Margin="20,0,0,9" Click="Button_Click_Data">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
                 </Button.Background>
@@ -123,7 +123,7 @@
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,10"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
             <Button Height="20" Width="20" Grid.Row="4" Grid.Column="3" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="20,0,0,12">
+                    HorizontalAlignment="Left" Margin="20,0,0,12" Click="Button_Click_Sandi">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
                 </Button.Background>
@@ -150,7 +150,7 @@
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,5,0,0"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
             <Button Height="20" Width="20" Grid.Row="5" Grid.Column="3" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="20,7,0,0">
+                    HorizontalAlignment="Left" Margin="20,7,0,0" Click="Button_Click_Bantuan">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
                 </Button.Background>
@@ -164,7 +164,7 @@
                 FontWeight="Normal" VerticalAlignment="Center" Margin="25,0,0,10"
                 FontSize="12px" RenderTransformOrigin="0.496,-0.784" Height="24" Width="106"/>
             <Button Height="20" Width="20" Grid.Row="6" Grid.Column="3" BorderThickness="0"
-                    HorizontalAlignment="Left" Margin="20,0,0,9">
+                    HorizontalAlignment="Left" Margin="20,0,0,9" Click="Button_Click_Kontak">
                 <Button.Background>
                     <ImageBrush ImageSource="/Resources/Images/chevron-right.png"/>
                 </Button.Background>

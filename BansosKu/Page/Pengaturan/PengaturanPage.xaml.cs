@@ -19,16 +19,31 @@ using System.Windows.Shapes;
 
 namespace BansosKu.Page.Pengaturan
 {
-    /// <summary>
-    /// Interaction logic for Pengaturan.xaml
-    /// </summary>
     public partial class PengaturanPage : Window
     {
+        private enum PageState
+        {
+            Home,
+            Data,
+            Sandi,
+            Nama,
+            Bantuan,
+            Kontak
+        }
+
+        private PageState currentState;
         private UserModel myUser;
         private MyAPI _api = new MyAPI();
+
         public PengaturanPage()
         {
             InitializeComponent();
+            InitializePage();
+        }
+
+        private void InitializePage()
+        {
+            currentState = PageState.Home;
             getDataUser();
         }
 
@@ -57,19 +72,72 @@ namespace BansosKu.Page.Pengaturan
             }
         }
 
-
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void UpdatePageState(PageState state)
         {
-            Data data = new Data();
-            this.Close();
-            data.Show();
+            currentState = state;
+            // Atur tampilan UI sesuai dengan currentState
+            switch (currentState)
+            {
+                case PageState.Home:
+                    HomePage homePage = new HomePage();
+                    this.Close();
+                    homePage.Show();
+                    break;
+                case PageState.Data:
+                    // Atur tampilan untuk halaman Data
+                    Data datapage = new Data();
+                    this.Close();
+                    datapage.Show();
+                    break;
+                case PageState.Sandi:
+                    // Atur tampilan untuk halaman Sandi
+                    break;
+                case PageState.Nama:
+                    // Atur tampilan untuk halaman Nama
+                    break;
+                case PageState.Bantuan:
+                    // Atur tampilan untuk halaman Bantuan
+                    break;
+                case PageState.Kontak:
+                    // Atur tampilan untuk halaman Kontak
+                    break;
+                default:
+                    break;
+            }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void Button_Click_Data(object sender, RoutedEventArgs e)
         {
-            HomePage home = new HomePage();
-            this.Close();
-            home.Show();
+            UpdatePageState(PageState.Data);
+        }
+
+        private void Button_Click_Home(object sender, RoutedEventArgs e)
+        {
+            UpdatePageState(PageState.Home);
+        }
+
+        private void Button_Click_Sandi(object sender, RoutedEventArgs e)
+        {
+            UpdatePageState(PageState.Sandi);
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void Button_Click_Nama(object sender, RoutedEventArgs e)
+        {
+            UpdatePageState(PageState.Nama);
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void Button_Click_Bantuan(object sender, RoutedEventArgs e)
+        {
+            UpdatePageState(PageState.Bantuan);
+            MessageBox.Show("Coming Soon");
+        }
+
+        private void Button_Click_Kontak(object sender, RoutedEventArgs e)
+        {
+            UpdatePageState(PageState.Kontak);
+            MessageBox.Show("Coming Soon");
         }
     }
 }
