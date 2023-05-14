@@ -91,7 +91,7 @@ namespace APILibrary.API
                 request.AddParameter("application/json", body, ParameterType.RequestBody);
                 var response = client.Execute(request);
                 var responseContent = JsonConvert.DeserializeObject<string>(response.Content.ToString());
-                Contract.Assert(responseContent == "success", "Update user failed");
+                Contract.Assert(responseContent == "success", "Update user success");
 
                 if (responseContent == "success")
                 {
