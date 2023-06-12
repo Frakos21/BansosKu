@@ -31,7 +31,7 @@ namespace BansosKu.Page.Register
         {
             InitializeComponent();
         }
-
+        
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -40,32 +40,27 @@ namespace BansosKu.Page.Register
 
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
-            Contract.Requires(TBNIK.Text != "");
-            Contract.Requires(TBNama.Text != "");
-            Contract.Requires(TBPassword != null);
-            Contract.Requires(TBComfirm != null);
-            Contract.Requires(!string.IsNullOrEmpty(TBPassword.Password));
-            Contract.Requires(!string.IsNullOrEmpty(TBComfirm.Password));
+            string nik = TBNIK.Text.Trim();
+            string nama = TBNama.Text.Trim();
+            string password = TBPassword.Password.Trim();
+            string confirmPassword = TBComfirm.Password.Trim();
 
-            var pw = new System.Net.NetworkCredential(string.Empty, TBPassword.SecurePassword).Password;
-            var pwc = new System.Net.NetworkCredential(string.Empty, TBComfirm.SecurePassword).Password;
+            Contract.Requires(!string.IsNullOrEmpty(nik));
+            Contract.Requires(!string.IsNullOrEmpty(nama));
+            Contract.Requires(!string.IsNullOrEmpty(password));
+            Contract.Requires(!string.IsNullOrEmpty(confirmPassword));
 
-            Debug.Assert(TBNIK.Text != "", "Password should not be null");
-            Debug.Assert(TBNama.Text != "", "Nama harus diisi");
-            Debug.Assert(pw != null, "Password should not be null");
-            Debug.Assert(pwc != null, "Confirm password should not be null");
-            Debug.Assert(!pw.Equals(pwc), "Password tidak sama dengan Confirm Password");
-
-            if (!pw.Equals(pwc) && pw!= null && pw != null)
+            if (password != confirmPassword)
             {
-                MessageBox.Show("Password tidak sama dengan Confirm Password, silahkan di periksa");
-            }else if(TBNIK.Text == "" || TBNama.Text == "")
+                MessageBox.Show("Password tidak sama dengan Confirm Password, silahkan diperiksa");
+            }
+            else if (string.IsNullOrEmpty(nik) || string.IsNullOrEmpty(nama))
             {
                 MessageBox.Show("Semua harus diisi, silahkan diperiksa");
             }
             else
             {
-                var res = _api.RegisterUser(TBNIK.Text, TBNama.Text, pw);
+                var res = _api.RegisterUser(nik, nama, password);
                 if (res == -2)
                 {
                     MessageBox.Show("Registrasi Gagal, NIK Sudah Terdaftar");
@@ -84,55 +79,38 @@ namespace BansosKu.Page.Register
         }
 
 
-        private void TBNIK_GotFocus(object sender, RoutedEventArgs e)
+
+        private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            if (textBox != null && textBox.Text == "Masukan NIK")
+            if (textBox != null && (textBox.Text == "Masukan NIK" || textBox.Text == "Masukan Nama" || textBox.Text == "Masukan Password" || textBox.Text == "Masukan Ulang Password"))
             {
                 textBox.Text = "";
                 textBox.Foreground = Brushes.Black;
             }
-
         }
 
-        private void TBNIK_LostFocus(object sender, RoutedEventArgs e)
+        private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
             if (textBox != null && string.IsNullOrWhiteSpace(textBox.Text))
             {
-                textBox.Text = "Masukan NIK";
+                if (textBox.Name == "TBNIK")
+                {
+                    textBox.Text = "Masukan NIK";
+                }
+                else if (textBox.Name == "TBNama")
+                {
+                    textBox.Text = "Masukan Nama";
+                }else if (textBox.Name == "TBPassword")
+                {
+                    textBox.Text = "Masukan Password";
+                }else if (textBox.Name == "TBComfirm")
+                {
+                    textBox.Text = "Masukan Password Ulang";
+                }
                 textBox.Foreground = Brushes.LightGray;
             }
-        }
-
-        private void TBNama_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TBNama_LostFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TBPassword_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TBPassword_LostFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TBComfirm_GotFocus(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TBComfirm_LostFocus(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

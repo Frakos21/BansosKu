@@ -30,7 +30,6 @@ namespace BansosKu.Page.BansosPage
             InitializeComponent();
             List<BansosModel> listItems = _api.GetAllBansos<BansosModel>();     
             GroupBy.ItemsSource = listItems;
-
         }
      
         private void GroupBy_Scroll(object sender, System.Windows.Controls.Primitives.ScrollEventArgs e)
