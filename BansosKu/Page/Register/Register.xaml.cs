@@ -19,9 +19,7 @@ using System.Diagnostics;
 
 namespace BansosKu.Page.Register
 {
-    /// <summary>
-    /// Interaction logic for Register.xaml
-    /// </summary>
+    //page register akun
     public partial class Register : Window
     {
 
@@ -32,12 +30,14 @@ namespace BansosKu.Page.Register
             InitializeComponent();
         }
         
+        //method action untuk pindah ke login page
         private void btnLogin_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             main.Show();
         }
 
+        //method untuk register akun
         private void btnRegister_Click(object sender, RoutedEventArgs e)
         {
             string nik = TBNIK.Text.Trim();
@@ -45,18 +45,21 @@ namespace BansosKu.Page.Register
             string password = TBPassword.Password.Trim();
             string confirmPassword = TBComfirm.Password.Trim();
 
-            Contract.Requires(!string.IsNullOrEmpty(nik));
-            Contract.Requires(!string.IsNullOrEmpty(nama));
-            Contract.Requires(!string.IsNullOrEmpty(password));
-            Contract.Requires(!string.IsNullOrEmpty(confirmPassword));
-
-            if (password != confirmPassword)
+            if (string.IsNullOrEmpty(nik) || string.IsNullOrEmpty(nama) || string.IsNullOrEmpty(password) || string.IsNullOrEmpty(confirmPassword))
+            {
+                MessageBox.Show("Semua harus diisi, silahkan diperiksa");
+            }
+            else if (password != confirmPassword)
             {
                 MessageBox.Show("Password tidak sama dengan Confirm Password, silahkan diperiksa");
             }
-            else if (string.IsNullOrEmpty(nik) || string.IsNullOrEmpty(nama))
+            else if (!IsNIKValid(nik))
             {
-                MessageBox.Show("Semua harus diisi, silahkan diperiksa");
+                MessageBox.Show("NIK tidak valid, silahkan diperiksa");
+            }
+            else if (!IsPasswordStrong(password))
+            {
+                MessageBox.Show("Password harus memiliki minimal 8 karakter dan mengandung huruf besar, huruf kecil, dan angka");
             }
             else
             {
@@ -78,8 +81,26 @@ namespace BansosKu.Page.Register
             }
         }
 
+        //method pengecekan NIK
+        private bool IsNIKValid(string nik)
+        {
+            // Implementasikan validasi NIK sesuai kebutuhan Anda
+            // Misalnya, cek panjang dan format NIK
+            // Menggunakan regular expression atau aturan yang berlaku
+            // NIK harus terdiri dari 16 angka
+            return nik.Length == 16;
+        }
 
+        //method pengecekan password
+        private bool IsPasswordStrong(string password)
+        {
+            // Implementasikan validasi amannya password
+            // password harus memiliki minimal 8 karakter,
+            // termasuk setidaknya satu huruf besar, satu huruf kecil, dan satu angka
+            return password.Length >= 8 && password.Any(char.IsUpper) && password.Any(char.IsLower) && password.Any(char.IsDigit);
+        }
 
+        //method untuk menghilangkan text di textfield ketika di klik
         private void TextBox_GotFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
@@ -90,6 +111,7 @@ namespace BansosKu.Page.Register
             }
         }
 
+        //method untuk memunculkan text di textfield ketika tidak di klik
         private void TextBox_LostFocus(object sender, RoutedEventArgs e)
         {
             TextBox textBox = sender as TextBox;
