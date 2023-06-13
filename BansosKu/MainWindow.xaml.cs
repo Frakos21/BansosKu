@@ -46,34 +46,41 @@ namespace BansosKu
         {
             try
             {
+                // Assert
                 Debug.Assert(tbNik.Text != "", "tbNik is null");
                 Debug.Assert(tbPassword != null, "tbPassword is null");
                 Contract.Requires(!string.IsNullOrEmpty(tbPassword.Password));
                 Contract.Requires(!tbNik.Text.Equals(""), "NIK harus diisi!!");
-
-                var pw = new System.Net.NetworkCredential(string.Empty, tbPassword.SecurePassword).Password;
-                Debug.Assert(pw != null, "Password should not be null");
+                var password = new System.Net.NetworkCredential(string.Empty, tbPassword.SecurePassword).Password;
+                Debug.Assert(password != null, "Password should not be null");
                 Debug.Assert(_api != null, "_api is null");
-                if (tbNik.Text.Equals(""))
+
+                // cek nik kosong atau tidak
+                if (tbNik.Text.Equals("")) 
                 {
                     MessageBox.Show("NIK harus diisi!!");
                 }
-                else if (pw.Equals(""))
+                //cek pasword kosong atau tidak
+                else if (password.Equals("")) 
                 {
                     MessageBox.Show("Password harus diisi!!");
                 }
                 else
                 {
-                    var res = _api.Login(tbNik.Text, pw);
+                    //melakukan pengecekan login 
+                    var res = _api.Login(tbNik.Text, password);
                     if (res == -1)
                     {
                         MessageBox.Show("Login Gagal");
                     }
                     else
                     {
-                        AppSettings.Default.id = res;
+                        // menyimpan id user yang sedang login
+                        AppSettings.Default.id = res; 
                         AppSettings.Default.Save();
                         MessageBox.Show("Login Berhasil");
+                       
+                        //close halaman login menuju dashboard
                         this.Close();
                         home.Show();
                     }
