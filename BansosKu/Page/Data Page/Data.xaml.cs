@@ -10,6 +10,7 @@ using System.Windows.Controls;
 
 namespace BansosKu.Page.Data_Page
 {
+    //Page data 
     public partial class Data : Window
     {
         private UserModel myUser;
@@ -17,12 +18,14 @@ namespace BansosKu.Page.Data_Page
         PengaturanPage set = new PengaturanPage();
         MyAPI _api = new MyAPI();
 
+        // Constructor
         public Data()
         {
             InitializeComponent();
             getMyUser();
         }
 
+        // Method Mengambil data user dari model
         private void getMyUser()
         {
             myUser = _api.getUserById(AppSettings.Default.id);
@@ -34,7 +37,8 @@ namespace BansosKu.Page.Data_Page
             tbPendapatan.Text = myUser.Pendapatan;
         }
         
-        private void BtnKirim_Click(object sender, RoutedEventArgs e)
+        // Method Mengupdate data
+        private void BtnUpadate_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(tbNik.Text) || string.IsNullOrEmpty(tbNama.Text) || string.IsNullOrEmpty(tbAlamat.Text) ||
                 string.IsNullOrEmpty(tbKTP.Text) || string.IsNullOrEmpty(tbRumah.Text) || string.IsNullOrEmpty(tbPendapatan.Text))
@@ -101,7 +105,8 @@ namespace BansosKu.Page.Data_Page
             return password.Length >= 8 && password.Any(char.IsUpper) && password.Any(char.IsLower) && password.Any(char.IsDigit);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        // Method untuk kembali ke page pengaturan
+        private void ButtonKembali_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
             set.Show();
