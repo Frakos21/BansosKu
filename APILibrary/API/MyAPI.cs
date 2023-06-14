@@ -12,6 +12,16 @@ namespace APILibrary.API
     public class MyAPI
     {
         private string baseurl = "https://localhost:7189/api/";
+        private string apiSecret;
+
+        public MyAPI(string apiSecret)
+        {
+            this.apiSecret = apiSecret;
+        }
+
+        public MyAPI()
+        {
+        }
 
         public int RegisterUser(string nik, string name, string password)
         {
